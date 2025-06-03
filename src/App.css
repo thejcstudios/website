@@ -1,140 +1,77 @@
 
-/*
-.videoTag
-{
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
-  object-fit: cover;
-  position: fixed;
-  top: 0; 
-  left: 0; 
-  bottom: 0;
+/* Base styles */
+body {
+  font-family: 'Cormorant Garamond', serif;
+  color: #111;
+  background: #f9f9fb;
+  line-height: 1.6;
+  font-size: 18px;
   margin: 0;
-  background-repeat: no-repeat;
-  
+  padding: 0 2rem;
 }
-.IntroText h1
-{
-  position: relative;
-  text-align: center;
-  margin-top: 10%;
-  color: white;
-  width: 100%;
-  padding: 20px;
-}
-.IntroText p
-{
-  position: relative;
-  text-align: center;
-  color: white;
-  z-index: 1;
-  padding: 20px;
-}
-.intro
-{
-  height: 1000px;
-  width: auto;
-}
-:root {
-  --transition-duration: 0.5s;
-}
-.flex-center {
-  z-index: 1;
-  padding-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
 
+/* Headings (futuristic, geometric) */
+h1, h2, h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0a0a0a;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(10,10,10,0.1);
 }
+/* Smaller headings */
+h4, h5 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraphs (elegant serif) */
+p {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 1.25rem;
+  font-size: 1.10rem; /* increases font size */
+}
+
+/* Links */
+a {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  color: #0077ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #005fcc;
+  text-decoration: underline;
+}
+
+/* Logo or special brand text */
 .logo {
-  width: 100px;
-  height: 120px;
-  padding-top: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #0a0a0a;
+  letter-spacing: 0.15em;
+  padding: 1rem 0;
+  user-select: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
 }
 
-.container {
-  width: clamp(230px, 80%, 920px);
-  flex-direction: row;
-}
-
-ul {
-  margin: 0px;
-  display: flex;
-  width: 300%;
-}
-
-li {
-  color: #efe;
-  margin: 20px;
-  padding: 0.7rem 1rem;
-  position: relative;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: var(--transition-duration);
-  overflow: hidden;
-}
-
-.navhover:hover {
-  z-index: 2;
-  color: black;
-}
-
-.navhover::before {
-  position: absolute;
-  content: "";
-  width: 100%;
+/* Optional futuristic underline for headings */
+h1::after, h2::after {
+  content: '';
+  display: block;
+  width: 50px;
   height: 3px;
-  background: white;
-  bottom: 0;
-  left: 0;
-  transition: var(--transition-duration);
-  z-index: 1;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #0077ff, #00ccff);
+  margin-top: 0.5rem;
+  border-radius: 2px;
 }
 
-
-
-li span {
-  position: absolute;
-  width: 25%;
-  height: 100%;
-  bottom: -100%;
-  background: white;
-  z-index: -1;
-  transition: var(--transition-duration);
-}
-
-li:hover span {
-  bottom: 0;
-}
-
-li span:nth-child(1) {
-  left: 0;
-}
-
-li span:nth-child(2) {
-  left: 25%;
-  transition-delay: 0.1s;
-}
-
-li span:nth-child(3) {
-  left: 50%;
-  transition-delay: 0.2s;
-  z-index: -1;
-}
-
-li:hover span:nth-child(3) {
-  bottom: 0;
-}
-
-li span:nth-child(4) {
-  left: 75%;
-  transition-delay: 0.2s;
-  z-index: -1;
-} */
 
 html, body {
   margin: 0 !important;
@@ -272,7 +209,6 @@ html, body {
 
 .AboutUs p {
   color: white;
-  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -280,7 +216,7 @@ html, body {
 
 @media screen and (max-width: 1024px) {
   .AboutUs {
-    margin-top: 20%;
+    
     padding: 10px;
   }
 
@@ -454,7 +390,6 @@ section {
 .section-header p {
   text-align: center;
   margin: auto;
-  font-size: 15px;
   padding-bottom: 60px;
   color: #535074;
   width: 50%;
@@ -463,7 +398,7 @@ section {
 .servicescontainer p {
   text-align: center;
   margin: auto;
-  font-size: 15px;
+  width: 70%;
   color: #535074;
 }
 
@@ -516,7 +451,6 @@ section {
 #services .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
 }
 
 #services .title a {
@@ -530,7 +464,6 @@ section {
   text-decoration: none;
 }
 #services .description {
-  font-size: 14px;
   line-height: 28px;
   margin-bottom: 0;
   text-align: left;

@@ -33,8 +33,12 @@
 }
 .offer2 {
   opacity: 0;
-  transform: translateX(-50px); /* start from the left */
-  transition: opacity 0.6s ease, transform 2s ease;
+transform: translateX(-50px); /* start from the left */
+transition: opacity 0.6s ease, transform 2s ease;
+
+width: 80%;        /* set width to 80% */
+margin: 0 auto;    /* center horizontally */
+text-align: center; /* center the text inside */
 }
 
 .offer2.visible {
