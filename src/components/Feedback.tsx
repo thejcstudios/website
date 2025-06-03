@@ -20,8 +20,8 @@ const Feedback: React.FC = () => {
     },
     {
       id: 3,
-      type: "post",
-      href: "https://www.facebook.com/julianzach.buenafe/posts/1437576763920568"
+      type: "video",
+      href: "https://www.facebook.com/thejcstudios/videos/10069791539746027"
     },
     {
       id: 4,

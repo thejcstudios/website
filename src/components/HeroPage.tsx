@@ -7,7 +7,7 @@ import { useInView } from "./hooks/useInView"; // adjust path
 export default function HeroPage() {
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("day");
-  const { ref: aboutRef, isVisible: isAboutVisible } = useInView();
+  const { ref: aboutRef, isVisible: isAboutVisible } = useInView(0.1, "0px", true);
 
   const toggleOffcanvas = () => {
     setOffcanvasOpen(!offcanvasOpen);

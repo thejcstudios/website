@@ -1,14 +1,22 @@
 import { useInView } from "./hooks/useInView"; // adjust path
 
 function PhotoGallery() {
-  const { ref: aboutRef, isVisible: isAboutVisible } = useInView();
+  const { ref: aboutRef, isVisible: isAboutVisible } = useInView(0.1, "0px", true);
    
     return (
     <>
     
     <div className="boxcontainer">
-    <h1>What we offer</h1>
-        <p>Professional editing and event coverage to help your business stand out. Get high-quality visuals tailored to your needs.</p>
+    <div
+          className={`offer1 ${isAboutVisible ? "visible" : ""}`}
+          ref={aboutRef}
+        >
+    <h1>What we offer</h1></div>
+    <div
+          className={`offer2 ${isAboutVisible ? "visible" : ""}`}
+          ref={aboutRef}
+        >
+        <p>Professional editing and event coverage to help your business stand out. Get high-quality visuals tailored to your needs.</p></div>
         <div
           className={`scroll-reveal7 ${isAboutVisible ? "visible" : ""}`}
           ref={aboutRef}
