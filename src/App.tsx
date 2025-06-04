@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import HeroPage from "./components/HeroPage";
 import PhotoGallery from "./components/PhotoGallery";
 import Parralax from "./components/Parralax";
@@ -8,10 +8,8 @@ import GallerySlider from "./components/GallerySlider";
 import VideoCollection from "./components/VideoCollection";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
-import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
   const youtubeVideoUrls = [
     "https://www.youtube.com/watch?v=jeqdYqsrsA0",
@@ -21,14 +19,6 @@ function App() {
     "https://www.youtube.com/watch?v=D1PvIWdJ8xo",
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 7000); // Simulate 2s load
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <LoadingSpinner />;
-  }
 
   return (
     <>
