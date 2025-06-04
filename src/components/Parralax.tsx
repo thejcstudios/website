@@ -1,22 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function Parralax() {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (parallaxRef.current) {
-        const scrollY = window.scrollY;
-        parallaxRef.current.style.backgroundPositionY = `${scrollY * 0.5}px`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // No scroll handler, just a static background container
 
   return (
-    <div className="parralaxcontainer" ref={parallaxRef} />
+    <div
+      className="parralaxcontainer"
+      ref={parallaxRef}
+    />
   );
 }
 

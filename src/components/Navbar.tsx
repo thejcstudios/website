@@ -1,6 +1,5 @@
 
 import intro from "../assets/intro.mp4";
-import logo from "../assets/logo1.webp";
 
 function Navbar() {
 
