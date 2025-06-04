@@ -13,7 +13,7 @@ function Navbar() {
 </video>
     <div className="flex-center">
   <div className="container flex-center">
-  <div className="logo"> <img className="logo" src={logo}></img></div>
+  <div className="logo"> <img className="logo" src="https://imgur.com/gallery/web-VFdTlWD#tfGNFsj"></img></div>
  
     <ul className="flex-center">    
       <li className="navhover">Home

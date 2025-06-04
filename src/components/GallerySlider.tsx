@@ -2,24 +2,33 @@ import { useState } from "react";
 import { useInView } from "./hooks/useInView"; // Adjust the path as needed
 import GallerySlideItem from "./hooks/GallerySlideItem"; // Adjust the path as needed
 
-import rec1 from "../assets/rec1.jpg";
-import sq1 from "../assets/sq1.jpg";
-import rec2 from "../assets/rec2.jpg";
-import sq2 from "../assets/sq2.jpg";
-import rec3 from "../assets/rec3.jpg";
-import sq3 from "../assets/sq3.jpg";
-import rec4 from "../assets/rec4.jpg";
-import sq4 from "../assets/sq4.jpg";
-import rec5 from "../assets/rec5.jpg";
-import sq5 from "../assets/sq5.jpg";
-
 function GallerySlider() {
   const slides = [
-    { prev: rec1, next: sq1, alt: "Gallery Slide - 1" },
-    { prev: rec2, next: sq2, alt: "Gallery Slide - 2" },
-    { prev: rec3, next: sq3, alt: "Gallery Slide - 3" },
-    { prev: rec4, next: sq4, alt: "Gallery Slide - 4" },
-    { prev: rec5, next: sq5, alt: "Gallery Slide - 5" },
+    {
+      prev: "https://i.imgur.com/Ndu4o8C.jpeg", // landscape
+      next: "https://i.imgur.com/uyMYF5b.jpeg", // square
+      alt: "Gallery Slide - 1",
+    },
+    {
+      prev: "https://i.imgur.com/22W8jLu.jpeg",
+      next: "https://i.imgur.com/hdx0GwG.jpeg",
+      alt: "Gallery Slide - 2",
+    },
+    {
+      prev: "https://i.imgur.com/1qjewwg.jpeg",
+      next: "https://i.imgur.com/vE64ndF.jpeg",
+      alt: "Gallery Slide - 3",
+    },
+    {
+      prev: "https://i.imgur.com/ovISJzo.jpeg",
+      next: "https://i.imgur.com/TO1C6Rc.jpeg",
+      alt: "Gallery Slide - 4",
+    },
+    {
+      prev: "https://i.imgur.com/eMIS3FH.jpeg",
+      next: "https://i.imgur.com/2rwIZeN.jpeg",
+      alt: "Gallery Slide - 5",
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -50,6 +59,7 @@ function GallerySlider() {
           of your occasion while maintaining a distinct, stylish touch. Let us help you tell
           your story—beautifully, boldly, and beyond expectation.
         </div>
+
         <div
           ref={wrapperRef}
           className={`base-template__content ${isWrapperVisible ? "visible" : ""}`}
