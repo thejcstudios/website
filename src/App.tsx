@@ -22,7 +22,7 @@ function App() {
   ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 7000); // Simulate 2s load
+    const timer = setTimeout(() => setLoading(false), 4000); // Simulate 2s load
     return () => clearTimeout(timer);
   }, []);
 
