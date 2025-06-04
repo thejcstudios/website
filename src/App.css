@@ -79,28 +79,16 @@ html, body {
   overflow-x: hidden !important;
   width: 100% !important;
 }
-.parralaxcontainer 
-{
-  
-  top:0px;
+.parralaxcontainer {
   position: relative;
-  display: flex;
   width: 100%;
-  height: 100px;
-
-  /* The image used */
-  background-image: url("./assets/488256810_1107464334726968_3870109076615288051_n.jpg");
-  /* Set a specific height */
-  min-height: 300px;
-  /* Create the parallax scrolling effect */
+  height: 40vh;
+  background-image: url("./assets/parallax.jpg");
+  background-position: center 0%; /* Lower image vertically */
+  will-change: background-position;
   
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0px;
-  z-index: 2;
 }
+
 
 .boxcontainer h1
 {
@@ -136,7 +124,7 @@ html, body {
   position: absolute;
   width: 30%;
   /* The image used */
-  background-image: url("https://scontent.fmnl4-2.fna.fbcdn.net/v/t39.30808-6/476228809_1154651809621281_6266316232339093243_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDijcBYTuCRYoGchpLIRQRygYWZzZAU93KBhZnNkBT3dO53cdIPzqdzD-Jo1eDiMTgESz0jPu94OaTfLQydB-w&_nc_ohc=SFMLOnbAekkQ7kNvwEn36vj&_nc_oc=AdkclRdZRSndBE_W6Fx7of8fm3FLjFSaOIOW5dNQOLXxHlfq688s_S8hFuaNc26Jb7pIg172wt0x6C2QZyJzJflI&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&_nc_gid=yapP7VV1Hi_X4QG1PDBnuA&oh=00_AfKG146T8dkuTmOokAvjRM3umw-X2eD3XQv9nMu9gQvdxw&oe=6840976C");
+  background-image: url("./assets/aboutusphoto2.jpg");
   /* Set a specific height */
   min-height: 800px;
   /* Create the parallax scrolling effect */
@@ -215,6 +203,16 @@ html, body {
 
 
 @media screen and (max-width: 1024px) {
+  .parralaxcontainer {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    background-image: url("./assets/parallax.jpg");
+    background-size: cover;
+    background-position: center; /* Lower the image more */
+    will-change: background-position;
+  }
+  
   .AboutUs {
     
     padding: 10px;
@@ -239,7 +237,7 @@ html, body {
      max-width: 400px;
      min-height: 400px;
      border: 1px solid #FFFAF0;
-     background-image: url("https://scontent.fmnl4-2.fna.fbcdn.net/v/t39.30808-6/476228809_1154651809621281_6266316232339093243_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEDijcBYTuCRYoGchpLIRQRygYWZzZAU93KBhZnNkBT3dO53cdIPzqdzD-Jo1eDiMTgESz0jPu94OaTfLQydB-w&_nc_ohc=SFMLOnbAekkQ7kNvwEn36vj&_nc_oc=AdkclRdZRSndBE_W6Fx7of8fm3FLjFSaOIOW5dNQOLXxHlfq688s_S8hFuaNc26Jb7pIg172wt0x6C2QZyJzJflI&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&_nc_gid=yapP7VV1Hi_X4QG1PDBnuA&oh=00_AfKG146T8dkuTmOokAvjRM3umw-X2eD3XQv9nMu9gQvdxw&oe=6840976C"); /* shortened for readability */
+     background-image: url("./assets/aboutusphoto2.jpg"); /* shortened for readability */
      background-attachment: scroll;
      background-position: center;
      background-repeat: no-repeat;
@@ -260,11 +258,10 @@ html, body {
 }
 .AboutPhoto2 {
   position: relative;
-   width: 90%;
-   max-width: 400px;
+   width: 100%;
    min-height: 400px;
    border: 1px solid #FFFAF0;
-   background-image: url("https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/473634369_1138414184578377_5050945370082994823_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=LsIBQjY42g4Q7kNvwF7ZEJ_&_nc_oc=AdlTIrn19FUA4Knh_NmujEAg-srcbhSQlGzpuFiXMFmLLJ_aVeBMi_kDrEyZrFY4JmfQ43PKMFK6q1rMkUHAi3Ix&_nc_zt=23&_nc_ht=scontent.fmnl4-4.fna&_nc_gid=9oqhtrMZrOWNZ_-EZCZDmw&oh=00_AfKB40fJLR80KgZChffwehGpYfHWtsPrHVxo03L-BS9ACw&oe=684371C5"); /* shortened for readability */
+   background-image: url("./assets/aboutusphoto.jpg"); /* shortened for readability */
    background-attachment: scroll;
    background-position: center;
    background-repeat: no-repeat;

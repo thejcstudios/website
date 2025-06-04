@@ -41,7 +41,7 @@ function PhotoGallery() {
   </div>
   <div className="card">
     <img src="https://scontent.fmnl4-7.fna.fbcdn.net/v/t39.30808-6/490214518_1113208394152562_3276928660274432604_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeFO0GfieoYh-zTNQw6c9s7a3qMVsWwmBDHeoxWxbCYEMQTlBPzxC9EfmOLaieAjhxY213L2ReTYMWX26wB-Q5Ay&_nc_ohc=IR324IanI3MQ7kNvwEfAyfy&_nc_oc=AdlufGFsoOlbci7rbFxR3eqDAu5iJkUFKACRpi0BrINVz2i2DsNmekxTyGGYal3cSU8RWMo28sarq6PnsLWpJzu8&_nc_zt=23&_nc_ht=scontent.fmnl4-7.fna&_nc_gid=XtD5sMY7u4mGTQBkU_Ontw&oh=00_AfKHiCtEHRbwkaJYHjwO7X8kfVnoBWoomjiJApPC0Qa5JQ&oe=683F826C"/>
-    <div className="card__head">Advetisments</div>
+    <div className="card__head">Ads</div>
   </div>
 </div></div></div>
    </>);
