@@ -1,4 +1,3 @@
-// components/GallerySlideItem.tsx
 import { useInView } from "../hooks/useInView";
 
 type Props = {
@@ -29,11 +28,13 @@ export default function GallerySlideItem({ slide, isActive, index, onClick }: Pr
           className="gallery-slider__img-prev"
           src={slide.prev}
           alt={slide.alt}
+          loading="lazy"
         />
         <img
           className="gallery-slider__img-next"
           src={slide.next}
           alt={`${slide.alt} Active`}
+          loading="lazy"
         />
       </div>
     </div>
