@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
         <div className="AboutPhoto2Wrapper">
           <div className="frame-corner top-right" />
           <img
-            src="https://i.imgur.com/BP0s6Mj.jpeg"
+            src="https://i.imgur.com/d8Geld0.jpeg"
             alt="Event Coverage"
             loading="lazy"
             className="AboutPhoto2"
