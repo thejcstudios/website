@@ -1,4 +1,5 @@
-import { useFacebookSDK } from "./hooks/useFacebookSDK"; // adjust the path if needed
+import { useFacebookSDK } from "./hooks/useFacebookSDK";
+import { useInView } from "./hooks/useInView"; // Make sure this exists and is properly set up
 
 type FacebookPost = {
   id: number;
@@ -7,7 +8,10 @@ type FacebookPost = {
 };
 
 const Feedback: React.FC = () => {
-  useFacebookSDK(); // 🔄 Inject SDK logic here
+  useFacebookSDK();
+
+  const { ref: titleRef, isVisible: isTitleVisible } = useInView(0.1, "0px", true);
+  const { ref: textRef, isVisible: isTextVisible } = useInView(0.1, "0px", true);
 
   const posts: FacebookPost[] = [
     {
@@ -40,8 +44,16 @@ const Feedback: React.FC = () => {
   return (
     <div className="gallery-container">
       <div className="fbtitle">
-        <h1>Client Feedback & Highlights</h1>
-        <p>
+        <h1
+          ref={titleRef}
+          className={`fade-left ${isTitleVisible ? "visible" : ""}`}
+        >
+          Client Feedback & Highlights
+        </h1>
+        <p
+          ref={textRef}
+          className={`fade-right ${isTextVisible ? "visible" : ""}`}
+        >
           Every post tells a story, and every story reflects the trust,
           happiness, and memories we've built with our amazing clients.
         </p>

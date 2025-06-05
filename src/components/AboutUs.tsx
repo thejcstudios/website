@@ -8,6 +8,9 @@ type VimeoVideo = {
 const AboutUs: React.FC = () => {
   const { ref: ref1, isVisible: vis1 } = useInView(0.1, "0px", true);
   const { ref: ref2, isVisible: vis2 } = useInView(0.1, "0px", true);
+  const { ref: ref3, isVisible: vis3 } = useInView(0.1, "0px", true);
+  const { ref: ref4, isVisible: vis4 } = useInView(0.1, "0px", true);
+  const { ref: ref5, isVisible: vis5 } = useInView(0.1, "0px", true);
 
   const videos: VimeoVideo[] = [
     {
@@ -53,15 +56,22 @@ const AboutUs: React.FC = () => {
                   ></iframe>
                 </div>
               ))}
-            </div>
+            </div> </div>
           </div>
         </div>
-
+        <div
+        className={`AboutUs scroll-reveal ${vis5 ? "visible" : ""}`}
+        ref={ref5}
+      >
         <p>
           Our team provides expert editing and event coverage to help your
           business stand out. We offer reliable solutions tailored to your
           project, ensuring high-quality results every time.
-        </p>
+        </p></div>
+        <div
+        className={`AboutUs scroll-reveal ${vis3 ? "visible" : ""}`}
+        ref={ref3}
+      >
 
         <div className="AboutPhoto2Wrapper">
           <div className="frame-corner top-right" />
@@ -71,8 +81,11 @@ const AboutUs: React.FC = () => {
             loading="lazy"
             className="AboutPhoto2"
           />
-        </div>
-
+        </div></div>
+        <div
+        className={`AboutUs scroll-reveal2 ${vis4 ? "visible" : ""}`}
+        ref={ref4}
+      >
         <h2>"Innovate. Collaborate. Elevate."</h2>
         <p>
           At JC STUDIO, we specialize in capturing the essence of every
@@ -80,8 +93,8 @@ const AboutUs: React.FC = () => {
           celebration. With a keen eye for detail and a passion for
           storytelling, we turn fleeting moments into timeless memories.
         </p>
-      </div>
-    </div>
+     
+    </div></div>
   );
 };
 
