@@ -1,15 +1,9 @@
-import { useRef } from "react";
-
 function Parralax() {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
-  // No scroll handler, just a static background container
-
   return (
-    <div
-      className="parralaxcontainer"
-      ref={parallaxRef}
-    />
+    <div className="parralaxcontainer">
+      <div className="parallax-bg-text" />
+      <h1 className="parallax-title">JC Studio</h1>
+    </div>
   );
 }
 

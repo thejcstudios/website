@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 
 
@@ -87,7 +88,26 @@ p::before, .AboutUs p::before, .servicescontainer p::before {
   background-position: center 0%;
   background-repeat: no-repeat;
   background-size: cover;
-background-attachment: fixed;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.parallax-title {
+  font-family: 'Impact', 'Anton', sans-serif; /* use strong, bold font */
+  font-size: 25vw;
+  width: 100%;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 4px black; /* thicker stroke */
+  text-transform: uppercase;
+  letter-spacing: -0.00em; /* tighter spacing */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
 
@@ -157,6 +177,7 @@ background-attachment: fixed;
   color: #FFFFFF;
 }
 
+
 /* Animations */
 .scroll-reveal,
 .scroll-reveal2 {
@@ -224,6 +245,15 @@ background-attachment: fixed;
     align-items: center;
     padding: 40px 50px;
   }
+  .parralaxcontainer {
+    height: 15vh;
+  }
+  .parallax-title {
+ 
+    -webkit-text-stroke: 1px black; /* thicker stroke */
+  }
+  
+
   .AboutPhoto2 {
     display: block;
     max-width: 100%;
