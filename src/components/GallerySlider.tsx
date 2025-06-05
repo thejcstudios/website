@@ -5,28 +5,28 @@ import GallerySlideItem from "./hooks/GallerySlideItem"; // Adjust the path as n
 function GallerySlider() {
   const slides = [
     {
-      prev: "https://i.imgur.com/Ndu4o8C.jpeg", // landscape
-      next: "https://i.imgur.com/uyMYF5b.jpeg", // square
+      prev: "https://i.imgur.com/YdmDRi3.jpeg", // landscape
+      next: "https://i.imgur.com/9TvH0Xi.jpeg", // square
       alt: "Gallery Slide - 1",
     },
     {
-      prev: "https://i.imgur.com/22W8jLu.jpeg",
-      next: "https://i.imgur.com/hdx0GwG.jpeg",
+      prev: "https://i.imgur.com/Kgk7l1b.jpeg",
+      next: "https://i.imgur.com/oqcte1n.jpeg",
       alt: "Gallery Slide - 2",
     },
     {
-      prev: "https://i.imgur.com/1qjewwg.jpeg",
-      next: "https://i.imgur.com/vE64ndF.jpeg",
+      prev: "https://i.imgur.com/9CpUXmb.jpeg",
+      next: "https://i.imgur.com/heTq22N.jpeg",
       alt: "Gallery Slide - 3",
     },
     {
-      prev: "https://i.imgur.com/ovISJzo.jpeg",
-      next: "https://i.imgur.com/TO1C6Rc.jpeg",
+      prev: "https://i.imgur.com/UpNcNRF.jpeg",
+      next: "https://i.imgur.com/u0qwDnI.jpeg",
       alt: "Gallery Slide - 4",
     },
     {
-      prev: "https://i.imgur.com/eMIS3FH.jpeg",
-      next: "https://i.imgur.com/2rwIZeN.jpeg",
+      prev: "https://i.imgur.com/4gVrzmR.jpeg",
+      next: "https://i.imgur.com/M4TC5H8.jpeg",
       alt: "Gallery Slide - 5",
     },
   ];

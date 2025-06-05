@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
       >
         <div className="frame-corner bottom-left" />
         <img
-          src="https://i.imgur.com/m5RGml7.jpeg"
+          src="https://i.imgur.com/mD8MiYy.jpeg"
           alt="About JC Studio"
           loading="lazy"
           className="AboutPhoto"
@@ -66,7 +66,7 @@ const AboutUs: React.FC = () => {
         <div className="AboutPhoto2Wrapper">
           <div className="frame-corner top-right" />
           <img
-            src="https://i.imgur.com/GwkNKXv.jpeg"
+            src="https://i.imgur.com/BP0s6Mj.jpeg"
             alt="Event Coverage"
             loading="lazy"
             className="AboutPhoto2"
