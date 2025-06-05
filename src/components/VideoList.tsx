@@ -59,6 +59,7 @@ const VideoList: React.FC = () => {
                 data-href={post.href}
                 data-width="500"
                 data-show-text="false"
+                data-allowfullscreen="true"
               ></div>
             </div>
           ))}

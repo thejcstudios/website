@@ -1,8 +1,20 @@
 import { useInView } from "./hooks/useInView";
 
-function AboutUs() {
+type VimeoVideo = {
+  id: number;
+  vimeoId: string; // Only the Vimeo ID
+};
+
+const AboutUs: React.FC = () => {
   const { ref: ref1, isVisible: vis1 } = useInView(0.1, "0px", true);
   const { ref: ref2, isVisible: vis2 } = useInView(0.1, "0px", true);
+
+  const videos: VimeoVideo[] = [
+    {
+      id: 1,
+      vimeoId: "1090708957" // Replace this with your actual Vimeo video ID
+    }
+  ];
 
   return (
     <div className="AboutUscontainer">
@@ -24,6 +36,27 @@ function AboutUs() {
         ref={ref2}
       >
         <h1>Professional photo and video services for business</h1>
+
+        <div className="gallery-container2">
+          <div className="fbcontent2">
+            <div className="gallery-grid2">
+              {videos.map((video) => (
+                <div key={video.id} className="gallery-item">
+                  <iframe
+                    src={`https://player.vimeo.com/video/${video.vimeoId}`}
+                    width="100%"
+                    height="281"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title={`Vimeo video ${video.id}`}
+                  ></iframe>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <p>
           Our team provides expert editing and event coverage to help your
           business stand out. We offer reliable solutions tailored to your
@@ -50,6 +83,6 @@ function AboutUs() {
       </div>
     </div>
   );
-}
+};
 
 export default AboutUs;
