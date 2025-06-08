@@ -2,6 +2,9 @@ import { useEffect } from "react";
 
 export const useFacebookSDK = () => {
   useEffect(() => {
+    // Avoid running in development mode
+    if (import.meta.env.MODE === "development") return;
+
     if (!document.getElementById("fb-root")) {
       const fbRoot = document.createElement("div");
       fbRoot.id = "fb-root";

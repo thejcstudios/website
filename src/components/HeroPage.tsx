@@ -28,7 +28,7 @@ export default function HeroPage() {
         <div className="HeroContainer">
         <a className="navbar-brand d-flex align-items-center gap-2" href="#">
   <img src={logo} alt="JC Studio Logo" height="30" />
-  JC STUDIO
+  JC STUDIOS
 </a>
           <div className="menu-icon d-lg-none" onClick={toggleOffcanvas}>
             <span className={offcanvasOpen ? "active" : ""}></span>
@@ -53,7 +53,7 @@ export default function HeroPage() {
       {offcanvasOpen && (
         <div className="offcanvas offcanvas-end show" style={{ visibility: "visible" }}>
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title">JC STUDIO</h5>
+            <h5 className="offcanvas-title">JC STUDIOS</h5>
             <div className="menu-icon active" onClick={toggleOffcanvas}>
               <span></span>
               <span></span>
@@ -61,13 +61,34 @@ export default function HeroPage() {
             </div>
           </div>
           <div className="offcanvas-body">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#"><i className="bi bi-lightning-charge-fill"></i> Home</a></li>
-              <li className="nav-item"><a className="nav-link" href="#"><i className="bi bi-building"></i> About Us</a></li>
-              <li className="nav-item"><a className="nav-link" href="#"><i className="bi bi-palette"></i> Photo Gallery</a></li>
-              <li className="nav-item"><a className="nav-link" href="#"><i className="bi bi-journal-text"></i> Video Gallery</a></li>
-              <li className="nav-item"><a className="nav-link" href="#"><i className="bi bi-journal-text"></i> Feedback</a></li>
-            </ul>
+          <ul className="navbar-nav">
+  <li className="nav-item">
+    <a className="nav-link" href="#">
+      <i className="bi bi-house-door-fill"></i> Home
+    </a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#">
+      <i className="bi bi-info-circle-fill"></i> About Us
+    </a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#">
+      <i className="bi bi-images"></i> Photo Gallery
+    </a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#">
+      <i className="bi bi-camera-reels-fill"></i> Video Gallery
+    </a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#">
+      <i className="bi bi-chat-left-text-fill"></i> Feedback
+    </a>
+  </li>
+</ul>
+
             <a className="btn btn-see-more mt-3 w-100" href="https://m.me/thejcstudios">Message Us</a>
           </div>
           <div className="offcanvas-footer">

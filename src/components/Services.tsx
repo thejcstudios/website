@@ -46,7 +46,7 @@ function Services() {
 
             <div className="col-md-6 col-lg-4">
               <div className={`box ${isBox4Visible ? "visible" : ""}`} ref={box4Ref}>
-                <h4 className="title"><a>E Wedding Invitation</a></h4>
+                <h4 className="title"><a>E Website Invitation</a></h4>
                 <p className="description">Your Dream Day Starts with a Stunning Invite — Create personalized digital invitations to share your special event online with elegance and style, crafted to impress your guests.</p>
               </div>
             </div>
