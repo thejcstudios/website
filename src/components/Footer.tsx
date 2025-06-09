@@ -20,7 +20,7 @@ function Footer() {
   
           {/* 👇 Dev Credit with Facebook & Messenger icons */}
           <div className="site-footer-dev">
-            Dev: Ronnel Santos
+            Site developed by: Ronnel Santos
             <a href="https://www.facebook.com/ronnel.santos08" aria-label="Facebook" className="dev-icon"><i className="fa-brands fa-facebook"></i></a>
             <a href="https://m.me/ronnel.santos08" aria-label="Messenger" className="dev-icon"><i className="fa-brands fa-facebook-messenger"></i></a>
           </div>
