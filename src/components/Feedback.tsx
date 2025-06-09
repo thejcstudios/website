@@ -42,6 +42,7 @@ const Feedback: React.FC = () => {
   ];
 
   return (
+    <section id="feedback">
     <div className="gallery-container">
       <div className="fbtitle">
         <h1
@@ -81,6 +82,7 @@ const Feedback: React.FC = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

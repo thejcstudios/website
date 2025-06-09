@@ -20,11 +20,12 @@ const AboutUs: React.FC = () => {
   ];
 
   return (
-    <div className="AboutUscontainer">
-      <div
-        className={`AboutPhotoWrapper scroll-reveal2 ${vis1 ? "visible" : ""}`}
-        ref={ref1}
-      >
+    <section id="about">
+  <div className="AboutUscontainer">
+  <h1>Professional photo and video services for business</h1>
+    {/* Section 1: Left Image, Right Text */}
+    <div className="ContentWrapper row-direction">
+      <div className={`AboutPhotoWrapper scroll-reveal2 ${vis1 ? "visible" : ""}`} ref={ref1}>
         <div className="frame-corner bottom-left" />
         <img
           src="https://i.imgur.com/mD8MiYy.jpeg"
@@ -34,12 +35,8 @@ const AboutUs: React.FC = () => {
         />
       </div>
 
-      <div
-        className={`AboutUs scroll-reveal ${vis2 ? "visible" : ""}`}
-        ref={ref2}
-      >
-        <h1>Professional photo and video services for business</h1>
-
+      <div className={`AboutUs scroll-reveal ${vis2 ? "visible" : ""}`} ref={ref2}>
+        
         <div className="gallery-container2">
           <div className="fbcontent2">
             <div className="gallery-grid2">
@@ -50,42 +47,32 @@ const AboutUs: React.FC = () => {
                     width="100%"
                     height="281"
                     frameBorder="0"
-                    allowFullScreen={true}
+                    allowFullScreen
                     allow="autoplay; fullscreen; picture-in-picture"
                     title={`Vimeo video ${video.id}`}
                   ></iframe>
                 </div>
               ))}
-            </div> </div>
+            </div>
           </div>
         </div>
-        <div
-        className={`AboutUs scroll-reveal ${vis5 ? "visible" : ""}`}
-        ref={ref5}
-      >
+      </div>
+    </div>
+
+    {/* Section 2: Centered Paragraph */}
+    <div className="ContentWrapper center-text">
+      <div className={`AboutUs scroll-reveal ${vis5 ? "visible" : ""}`} ref={ref5}>
         <p>
           Our team provides expert editing and event coverage to help your
           business stand out. We offer reliable solutions tailored to your
           project, ensuring high-quality results every time.
-        </p></div>
-        <div
-        className={`AboutUs scroll-reveal ${vis3 ? "visible" : ""}`}
-        ref={ref3}
-      >
+        </p>
+      </div>
+    </div>
 
-        <div className="AboutPhoto2Wrapper">
-          <div className="frame-corner top-right" />
-          <img
-            src="https://i.imgur.com/d8Geld0.jpeg"
-            alt="Event Coverage"
-            loading="lazy"
-            className="AboutPhoto2"
-          />
-        </div></div>
-        <div
-        className={`AboutUs scroll-reveal2 ${vis4 ? "visible" : ""}`}
-        ref={ref4}
-      >
+    {/* Section 3: Left Text, Right Image */}
+    <div className="ContentWrapper row-direction reverse">
+      <div className={`AboutUs scroll-reveal2 ${vis4 ? "visible" : ""}`} ref={ref4}>
         <h2>"Innovate. Collaborate. Elevate."</h2>
         <p>
           At JC STUDIO, we specialize in capturing the essence of every
@@ -93,8 +80,21 @@ const AboutUs: React.FC = () => {
           celebration. With a keen eye for detail and a passion for
           storytelling, we turn fleeting moments into timeless memories.
         </p>
-     
-    </div></div>
+      </div>
+
+      <div className={`AboutPhoto2Wrapper scroll-reveal ${vis3 ? "visible" : ""}`} ref={ref3}>
+        <div className="frame-corner top-right" />
+        <img
+          src="https://i.imgur.com/d8Geld0.jpeg"
+          alt="Event Coverage"
+          loading="lazy"
+          className="AboutPhoto2"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
   );
 };
 

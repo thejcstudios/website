@@ -38,7 +38,7 @@ function GallerySlider() {
   const { ref: wrapperRef, isVisible: isWrapperVisible } = useInView(0.2, "0px", true);
 
   return (
-    <section className="base-template">
+    <section id="photo" className="base-template">
       <div className="wrapper base-template__wrapper">
         <h1
           ref={titleRef}

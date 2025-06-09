@@ -4,7 +4,7 @@ function Footer() {
         <footer className="site-footer" role="contentinfo">
           <div className="site-footer-social" role="navigation" aria-labelledby="social-heading">
             <h3 id="social-heading" className="sr-only">Follow us on social media</h3>
-            <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook"></i></a>
+            <a href="https://www.facebook.com/thejcstudios" aria-label="Facebook"><i className="fa-brands fa-facebook"></i></a>
             <a href="#" aria-label="Twitter"><i className="fa-brands fa-x-twitter"></i></a>
             <a href="#" aria-label="Mastodon"><i className="fa-brands fa-mastodon"></i></a>
             <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>

@@ -47,6 +47,7 @@ const VideoList: React.FC = () => {
   ];
 
   return (
+    <section id="video">
     <div className="gallery-container2">
       <div className="fbtitle2">
         <h1
@@ -78,6 +79,7 @@ const VideoList: React.FC = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
