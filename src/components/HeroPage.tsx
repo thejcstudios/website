@@ -1,141 +1,130 @@
-import { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import logo from "../assets/logo1.webp";
-import { useInView } from "./hooks/useInView";
+import React, { useState, useEffect, useRef } from 'react';
 
-export default function HeroPage() {
-  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("day");
-  const { ref: aboutRef, isVisible: isAboutVisible } = useInView(0.1, "0px", true);
+const Hero: React.FC = () => {
+    // State to manage mouse position for the radial blur effect
+    const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: -9999, y: -9999 });
 
-  const toggleOffcanvas = () => {
-    setOffcanvasOpen(!offcanvasOpen);
-  };
+    // Ref for the main container to attach event listeners
+    const containerRef = useRef<HTMLElement>(null);
 
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
+    // Effect for handling mouse movement for the blur container
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const yOffset = -80; // Offset for fixed navbar
-      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      setOffcanvasOpen(false); // close menu if open
-    }
-  };
+        const handleMouseMove = (e: MouseEvent) => {
+            const x = e.clientX;
+            const y = e.clientY + window.scrollY; // Account for scroll position
+            setMousePos({ x, y });
+        };
 
-  useEffect(() => {
-    document.body.style.overflow = offcanvasOpen ? "hidden" : "auto";
-  }, [offcanvasOpen]);
+        const handleMouseLeave = () => {
+            setMousePos({ x: -9999, y: -9999 }); // Move mask off-screen
+        };
 
-  return (
-    <div>
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div className="HeroContainer">
-          <a className="navbar-brand d-flex align-items-center gap-2" href="#">
-            <img src={logo} alt="JC Studio Logo" height="30" />
-            JC STUDIOS
-          </a>
-          <div className="menu-icon d-lg-none" onClick={toggleOffcanvas}>
-            <span className={offcanvasOpen ? "active" : ""}></span>
-            <span className={offcanvasOpen ? "active" : ""}></span>
-            <span className={offcanvasOpen ? "active" : ""}></span>
-          </div>
-        </div>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("home")}>Home</a></li>
-            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("about")}>About Us</a></li>
-            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("photo")}>Photo Gallery</a></li>
-            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("video")}>Video Gallery</a></li>
-            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("feedback")}>Feedback</a></li>
-            <li className="nav-item">
-              <a className="btn btn-see-more ms-3" href="https://m.me/thejcstudios">Message Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('mouseleave', handleMouseLeave);
 
-      {/* Offcanvas Menu */}
-      {offcanvasOpen && (
-        <div className="offcanvas offcanvas-end show" style={{ visibility: "visible" }}>
-          <div className="offcanvas-header">
-            <h5 className="offcanvas-title">JC STUDIOS</h5>
-            <div className="menu-icon active" onClick={toggleOffcanvas}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div className="offcanvas-body">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("home")}><i className="bi bi-house-door-fill"></i> Home</a></li>
-              <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("about")}><i className="bi bi-info-circle-fill"></i> About Us</a></li>
-              <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("photo")}><i className="bi bi-images"></i> Photo Gallery</a></li>
-              <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("video")}><i className="bi bi-camera-reels-fill"></i> Video Gallery</a></li>
-              <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("feedback")}><i className="bi bi-chat-left-text-fill"></i> Feedback</a></li>
-            </ul>
-            <a className="btn btn-see-more mt-3 w-100" href="https://m.me/thejcstudios">Message Us</a>
-          </div>
-          <div className="offcanvas-footer">
-            <div className="social-icons d-flex justify-content-center gap-3">
-              <a href="https://www.facebook.com/thejcstudios"><i className="bi bi-facebook"></i></a>
-              <a href="#"><i className="bi bi-twitter"></i></a>
-              <a href="#"><i className="bi bi-instagram"></i></a>
-              <a href="#"><i className="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      )}
+        return () => {
+            container.removeEventListener('mousemove', handleMouseMove);
+            container.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []); // Empty dependency array means this runs once on mount
 
-      {/* Hero Section */}
-      <section id="home" className="hero-section position-relative d-flex align-items-center" style={{ height: "100vh" }}>
-        <div className="hero-overlay position-absolute w-100 h-100" style={{
-          background: "linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))"
-        }}></div>
+    return (
+        <main>
+            <section
+                className="hero-startup hero-blur-container"
+                id='hero'
+                ref={containerRef}
+                style={{
+                    // Apply CSS variables dynamically for the blur mask
+                    '--mouse-x': mousePos.x === -9999 ? '-9999px' : `${mousePos.x}px`,
+                    '--mouse-y': mousePos.y === -9999 ? '-9999px' : `${mousePos.y}px`,
+                } as React.CSSProperties} // Type assertion for custom CSS properties
+            >
+                {/* Images with radial cover */}
+                <div className="hero-scrolling-div-container-radial-cover"></div>
+                <div className="hero-scrolling-div-container">
+                    <div className="hero-scrolling-div hero-div1">
+                        <div className="hero-div-1-img-1"></div>
+                        <div className="hero-div-1-img-2"></div>
+                        <div className="hero-div-1-img-3"></div>
+                        <div className="hero-div-1-img-4"></div>
+                    </div>
+                    <div className="hero-scrolling-div hero-div2">
+                        <div className="hero-div-2-img-1"></div>
+                        <div className="hero-div-2-img-2"></div>
+                        <div className="hero-div-2-img-3"></div>
+                        <div className="hero-div-2-img-4"></div>
+                    </div>
+                    <div className="hero-scrolling-div hero-div3">
+                        <div className="hero-div-3-img-1"></div>
+                        <div className="hero-div-3-img-2"></div>
+                        <div className="hero-div-3-img-3"></div>
+                        <div className="hero-div-3-img-4"></div>
+                    </div>
+                    <div className="hero-scrolling-div hero-div4">
+                        <div className="hero-div-4-img-1"></div>
+                        <div className="hero-div-4-img-2"></div>
+                        <div className="hero-div-4-img-3"></div>
+                        <div className="hero-div-4-img-4"></div>
+                    </div>
+                </div>
 
-        <div className="position-relative text-white">
-          <div className={`scroll-reveal3 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
-            <h1 className="hero-title display-3 fw-bold mb-3">Capture Life, <br />Craft Stories</h1>
-          </div>
-          <div className={`scroll-reveal4 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
-            <p className="hero-subtitle lead mb-4" style={{ maxWidth: 600 }}>
-              Expert video and photo editing, cinematic event coverage — from every angle, for every moment.
-            </p>
-          </div>
-          <a href="#" className="btn btn-solar btn-lg mb-4">More about JC Studio</a>
+                {/* SVG background grid and animated lines */}
+                <svg className="hero-background-svg" viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="1.5" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
 
-          <div className="need-it-section">
-            <div className={`scroll-reveal5 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
-              <h5 className="need-it-title">Want your events captured with creativity and passion?</h5>
-            </div>
-            <div className={`scroll-reveal6 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
-              <div className="tab-group d-flex gap-3">
-                {['Capture', 'Enhance', 'Deliver'].map(tab => (
-                  <a
-                    key={tab}
-                    href="#"
-                    className={`tab ${activeTab === tab ? 'active' : ''}`}
-                    onClick={e => { e.preventDefault(); handleTabClick(tab); }}
-                  >
-                    {tab}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    <rect width="100%" height="100%" fill="black" />
 
-      {/* Additional sections should use corresponding IDs like:
-          <section id="about">...</section>
-          <section id="photo">...</section>
-          etc.
-      */}
-    </div>
-  );
-}
+                    <g stroke="gray" strokeWidth="0.1">
+                        {/* Vertical Lines */}
+                        {[...Array(21).keys()].map(i => (
+                            <line key={`v-${i}`} x1={i * 10} y1="0" x2={i * 10} y2="200" />
+                        ))}
+                        {/* Horizontal Lines */}
+                        {[...Array(21).keys()].map(i => (
+                            <line key={`h-${i}`} x1="0" y1={i * 10} x2="200" y2={i * 10} />
+                        ))}
+                    </g>
+
+                    <g strokeWidth="0.5" filter="url(#hero-glow)">
+                        {/* Animated glowing lines */}
+                        <line x1="40" y1="0" x2="40" y2="200" stroke="cyan">
+                            <animate attributeName="stroke-opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="cyan">
+                            <animate attributeName="stroke-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="120" y1="0" x2="120" y2="200" stroke="cyan">
+                            <animate attributeName="stroke-opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
+                        </line>
+                        <line x1="65" y1="50" x2="200" y2="50" stroke="cyan">
+                            <animate attributeName="stroke-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                        </line>
+                    </g>
+                </svg>
+
+                {/* Blur overlay controlled by mouse position */}
+                <div className="hero-blurred-overlay"></div>
+
+                 <div className="hero-text-container">
+                    <h1 className="hero-heading">Where Every Frame Tells Your Story</h1>
+                    <p className="hero-paragraph">At JC Studios, we go beyond simply capturing images—we create visual stories that move, inspire, and endure. Whether it’s a romantic wedding, a high-profile corporate event, a compelling business commercial, or a vibrant social gathering, we bring a creative eye and professional edge to every project. Our team is dedicated to turning your most important moments and brand visions into stunning, high-quality visuals that speak volumes. Let JC Studios frame your story—one unforgettable shot at a time.</p>
+                </div>
+            </section>
+           
+        </main>
+    );
+};
+
+export default Hero;

@@ -1,0 +1,497 @@
+:root {
+    --bg-color-startup: #000a15;
+    --white: #f1f1f1;
+    --black: #0b0b0b;
+    --light-grey: #f9f9f9;
+    --darker: #151515;
+    --background-primary: #8e2ef7;
+    --background-secondary: #0b0b0b;
+    --background-tertiary: #0b0b0b;
+    --background-image: radial-gradient(
+        circle at 50% 50%,
+        var(--background-primary),
+        var(--background-secondary) 90%,
+        var(--background-tertiary) 50%
+    );
+}
+
+
+@keyframes hero-subtleMove {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(25px) translateY(10px);
+    }
+    75% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes hero-glow {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 0px rgb(243, 255, 138);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes hero-glow2 {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 0px rgb(149, 255, 107);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes hero-glow3 {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 0px rgb(241, 152, 111);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+@keyframes hero-glow4 {
+    0% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 0px rgb(255, 255, 255);
+    }
+    100% {
+        box-shadow: 0 0 5px 0px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes hero-moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(100vw + 300px));
+    }
+}
+
+@keyframes hero-gradientAnimation {
+    0%,
+    100% {
+        background-image: linear-gradient(
+            180deg,
+            #4fe196 0%,
+            #63c2eb 35%,
+            #5bcfc8 70%,
+            #4fe196 100%
+        );
+    }
+    25% {
+        background-image: linear-gradient(
+            180deg,
+            #63c2eb 0%,
+            #5bcfc8 35%,
+            #4fe196 70%,
+            #63c2eb 100%
+        );
+    }
+    50% {
+        background-image: linear-gradient(
+            180deg,
+            #5bcfc8 0%,
+            #4fe196 35%,
+            #63c2eb 70%,
+            #5bcfc8 100%
+        );
+    }
+    75% {
+        background-image: linear-gradient(
+            180deg,
+            #4fe196 0%,
+            #63c2eb 35%,
+            #5bcfc8 70%,
+            #4fe196 100%
+        );
+    }
+}
+
+@keyframes hero-hoverEffect3 {
+    0%,
+    100% {
+        background-position: initial;
+        background-size: 600px;
+    }
+    50% {
+        background-position: top left;
+        background-size: 650px;
+    }
+}
+
+@keyframes hero-hoverEffect2 {
+    0%,
+    100% {
+        border: 5px solid var(--white);
+    }
+    50% {
+        border: 5px solid var(--black);
+    }
+}
+
+section.hero-startup {
+    height: 100vh;
+    background-color: var(--bg-color-startup);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+}
+
+section.hero-startup .hero-btn {
+    animation: hero-glow2 2s infinite;
+}
+
+section.hero-startup .hero-gradient {
+    background-image: linear-gradient(
+        180deg,
+        #4fe196 0%,
+        #63c2eb 35%,
+        #5bcfc8 70%,
+        #4fe196 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-gradientAnimation 5s ease infinite;
+}
+
+@keyframes hero-scrollUp {
+    0% {
+        transform: translateY(0) rotateY(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(-75px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+@keyframes hero-scrollDown {
+    0% {
+        transform: translateY(0) rotateY(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(75px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+.hero-scrolling-div-container {
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(
+        180deg,
+        #2538e02a 0%,
+        #e01ad02d 35%,
+        #eef11638 70%,
+        #e2193b36 100%
+    );
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+    opacity: 0.25;
+    filter: blur(1px);
+}
+
+.hero-scrolling-div-container-radial-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .hero-scrolling-div-container {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-scrolling-div-container-radial-cover {
+        display: none;
+    }
+    .hero-scrolling-div-container .hero-scrolling-div.hero-div1 {
+        display: none;
+    }
+    .hero-scrolling-div-container .hero-scrolling-div.hero-div4 {
+        display: none;
+    }
+}
+
+.hero-scrolling-div {
+    width: 100%;
+    height: auto;
+    background-color: #e0e0e0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    filter: grayscale(25%) sepia(100%) hue-rotate(90deg);
+}
+
+.hero-div1 {
+    background-color: rgba(24, 170, 192, 0.094);
+    background-size: center;
+    opacity: 0.5;
+    animation: hero-scrollUp 7s ease-in-out;
+}
+
+.hero-div2 {
+    background-color: rgba(78, 205, 197, 0.094);
+    animation: hero-scrollDown 7s ease-in-out;
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div3 {
+    background-color: rgba(26, 83, 92, 0.094);
+    background-size: cover;
+    opacity: 0.5;
+    animation: hero-scrollUp 7s ease-in-out;
+}
+.hero-div4 {
+    background-color: rgba(0, 184, 147, 0.094);
+    animation: hero-scrollDown 7s ease-in-out;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-1-img-1 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div-1-img-2 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-1-img-3 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad4.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-1-img-4 {
+    height: 500px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-2-img-1 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad3.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div-2-img-2 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-2-img-3 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad5.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-2-img-4 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-3-img-1 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad4.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div-3-img-2 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad3.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-3-img-3 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad2.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-3-img-4 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad1.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-4-img-1 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad2.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div-4-img-2 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad3.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-4-img-3 {
+    height: 500px;
+    background-image: url("https://assets.codepen.io/1502334/salad4.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-div-4-img-4 {
+    height: 300px;
+    background-image: url("https://assets.codepen.io/1502334/salad5.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.hero-blurred-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    z-index: 2;
+    mask-image: radial-gradient(
+        circle 125px at var(--mouse-x) var(--mouse-y),
+        transparent 25%,
+        black 125%
+    );
+    transition: backdrop-filter 0.3s ease;
+}
+
+.hero-background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.25;
+}
+
+.hero-text-container {
+	margin: 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+    color: #fff;
+    z-index: 10;
+    width: 50%;
+    /* Align all text content to the start (left) */
+    text-align: flex-start; /* Corrected to 'left' for text alignment */
+}
+
+.hero-heading {
+	text-align: left;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* Gradient white for h1 */
+    background: linear-gradient(to right, #ffffff, #e5c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
+
+.hero-paragraph {
+	color: #cecdcd;
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+    .hero-text-container {
+        margin: 5% auto; /* Smaller top/bottom margin, auto left/right for centering */
+        width: 90%; /* Occupy more width on smaller screens */
+        align-items: center; /* Center content horizontally */
+        justify-content: center; /* Center content vertically */
+        text-align: center; /* Center text content */
+    }
+
+    /* Example of how to decrease text size for elements within the container
+       You would apply these styles to specific text elements (e.g., h1, p)
+       inside your .hero-text-container, not the container itself.
+       This is a suggestion as the original snippet only provided container styles.
+    */
+    .hero-text-container h1 {
+        font-size: 2em; /* Adjust as needed */
+    }
+
+    .hero-text-container p {
+        font-size: 1em; /* Adjust as needed */
+    }
+}
+
+/* Media query for even smaller mobile devices */
+@media (max-width: 480px) {
+    .hero-text-container {
+        margin: 3% auto;
+        width: 95%;
+    }
+
+    .hero-text-container h1 {
+        font-size: 1.5em; /* Further decrease font size for very small screens */
+    }
+
+    .hero-text-container p {
+        font-size: 0.9em; /* Further decrease font size for very small screens */
+    }
+}

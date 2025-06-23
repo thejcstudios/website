@@ -1,0 +1,217 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+  /* Root styles for the app container */
+  .app-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a202c, #2d3748); /* Dark, subtle gradient background */
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Light text for contrast */
+    color: #e2e8f0;
+  }
+
+  /* Login container styling */
+  .login-container {
+    background: #2a3342; /* Darker background for the card */
+    border-radius: 16px;
+    padding: 45px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4); /* Deeper shadow for dark theme */
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle light border */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo styling */
+  .logo {
+    margin-bottom: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  /* Heading styling */
+  .login-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3em;
+    text-align: center;
+    color: #e2e8f0; /* Light color for heading */
+    margin-bottom: 35px;
+    font-weight: 700;
+  }
+
+  /* Form styling */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    animation: form-content-fade-in 0.5s ease-out;
+  }
+
+  /* Label styling */
+  .login-form label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #a0aec0; /* Lighter muted gray for labels */
+    font-weight: 500;
+  }
+
+  /* Input field styling */
+  .login-form input {
+    width: calc(100% - 24px);
+    padding: 13px;
+    border: 1px solid #4a5568; /* Darker border for inputs */
+    border-radius: 10px;
+    background-color: #2d3748; /* Dark input background */
+    color: #e2e8f0; /* Light input text color */
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .login-form input::placeholder {
+    color: #718096; /* Muted placeholder text */
+  }
+
+  .login-form input:focus {
+    border-color: #6a8cff; /* Retaining the elegant blue on focus */
+    box-shadow: 0 0 10px rgba(106, 140, 255, 0.3);
+  }
+
+  /* Message display styling */
+  .message {
+    text-align: center;
+    font-size: 0.88em;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: 500;
+  }
+
+  .message.success {
+    color: #a7f3d0; /* Light green for success */
+    background-color: rgba(52, 211, 153, 0.2); /* Transparent green background */
+    border: 1px solid rgba(52, 211, 153, 0.4);
+  }
+
+  .message.error {
+    color: #fca5a5; /* Light red for error */
+    background-color: rgba(239, 68, 68, 0.2); /* Transparent red background */
+    border: 1px solid rgba(239, 68, 68, 0.4);
+  }
+
+  /* Button styling */
+  .login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #5c7ee0, #7b94e7); /* Elegant blue gradient (same as light theme) */
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow for button */
+    letter-spacing: 0.5px;
+    display: flex; /* For centering spinner/text */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-button:hover {
+    background: linear-gradient(90deg, #7b94e7, #5c7ee0);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .login-button:active {
+    transform: translateY(0);
+  }
+
+  /* Loading spinner styles */
+  .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  /* Link styling (forgot password/back to login) */
+  .form-switch-link {
+    text-align: center;
+    font-size: 0.85em;
+    margin-top: 20px;
+  }
+
+  .form-switch-link a {
+    color: #90cdf4; /* Lighter blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .form-switch-link a:hover {
+    color: #6a8cff; /* Retaining the elegant blue on hover */
+    text-decoration: underline;
+  }
+
+  /* Keyframe animation for form content */
+  @keyframes form-content-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Keyframe animation for initial container load */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .login-container {
+      padding: 35px 25px;
+    }
+
+    .login-container h2 {
+      font-size: 2em;
+    }
+
+    .login-form input,
+    .login-button {
+      padding: 12px;
+    }
+  }
