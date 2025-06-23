@@ -39,7 +39,7 @@ const Navbar = () => {
             <NavLink icon={<Info size={20} />} text="About Us" href="#about" />
             <NavLink icon={<Image size={20} />} text="Photo Gallery" href="#photo" />
             <NavLink icon={<Video size={20} />} text="Video Gallery" href="#video" />
-            <NavLink icon={<Mail size={20} />} text="Message Us" href="#contactus" />
+            <NavLink icon={<Mail size={20} />} text="Message Us" href="#message" />
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -63,7 +63,7 @@ const Navbar = () => {
             <MobileNavLink icon={<Info size={20} />} text="About Us" href="#about" onClick={toggleMenu} />
             <MobileNavLink icon={<Image size={20} />} text="Photo Gallery" href="#photo" onClick={toggleMenu} />
             <MobileNavLink icon={<Video size={20} />} text="Video Gallery" href="#video" onClick={toggleMenu} />
-            <MobileNavLink icon={<Mail size={20} />} text="Message Us" href="#contact" onClick={toggleMenu} />
+            <MobileNavLink icon={<Mail size={20} />} text="Message Us" href="#message" onClick={toggleMenu} />
           </div>
         </div>
       </nav>

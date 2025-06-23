@@ -32,7 +32,7 @@ function AboutUs() {
     // We'll use a style tag for the CSS directly within the immersive for self-containment
     <>
     
-
+<section id="about">
       <div className="my-app-container">
         <div className="my-app-card">
           {/* Left Column */}
@@ -130,6 +130,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 }

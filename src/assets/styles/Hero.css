@@ -495,3 +495,53 @@ section.hero-startup .hero-gradient {
         font-size: 0.9em; /* Further decrease font size for very small screens */
     }
 }
+.my-app-button {
+    /* Basic Button Styling */
+    background-color: #000000; /* Black background */
+    color: #FFD700; /* Gold text */
+    padding: 1rem 2.5rem; /* Padding for size */
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1.25rem; /* Larger font size */
+    font-weight: 700; /* Bold text */
+    cursor: pointer;
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hides the sweep effect until it's active */
+    z-index: 1; /* Ensures button content is above sweep effect */
+    transition: color 0.3s ease-in-out; /* Smooth text color transition */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); /* Subtle gold shadow */
+
+    /* Link-specific styling for the <a> tag */
+    text-decoration: none; /* Remove underline from link */
+    display: inline-flex; /* Ensures padding and width work like a block element */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .my-app-button:hover {
+    color: #000000; /* Text color changes to black on hover */
+  }
+
+  .my-app-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(255, 215, 0, 0.6) 50%, /* Gold light sweep */
+      transparent 70%,
+      transparent 100%
+    );
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); /* Smooth sweep animation */
+    z-index: -1; /* Place behind button content */
+  }
+
+  .my-app-button:hover::before {
+    transform: translateX(0%); /* Sweep across to the right */
+  }

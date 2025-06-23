@@ -1,0 +1,111 @@
+
+/* Import Google Font for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my-app-container {
+  min-height: 100vh;
+  background-color: #1a1a1a; /* Darker background for black theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Contact Form Styles */
+.my-app-contact-section {
+  background-color: #000000; /* Pure black for the form section */
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(255, 215, 0, 0.25); /* Gold shadow */
+  max-width: 72rem;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #FFD700; /* Gold border */
+}
+
+.my-app-contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #FFD700; /* Gold color for heading */
+  margin-bottom: 1.5rem;
+}
+
+.my-app-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.my-app-form-group {
+  text-align: left;
+}
+
+.my-app-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #FFD700; /* Gold color for labels */
+}
+
+.my-app-form-input,
+.my-app-form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444444; /* Dark gray border */
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  color: #ffffff; /* White text for input */
+  background-color: #222222; /* Darker background for inputs */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.my-app-form-input:focus,
+.my-app-form-textarea:focus {
+  outline: none;
+  border-color: #FFD700; /* Gold border on focus */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5); /* Gold shadow on focus */
+}
+
+.my-app-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.my-app-form-button {
+  background-color: #FFD700; /* Gold background for button */
+  color: #000000; /* Black text for button */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.my-app-form-button:hover {
+  background-color: #e6c200; /* Slightly darker gold on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.my-app-form-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Note text color for consistency */
+.my-app-contact-section p {
+  color: #aaaaaa; /* Lighter gray for note text */
+}
