@@ -8,6 +8,7 @@ import Services from './components/Services';
 import GallerySlider from './components/GallerySlider';
 import VideoList from './components/VideoList';
 import Feedback from './components/Feedback';
+import MessageUs from './components/MessageUs';
 import Footer from './components/Footer';
 import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
@@ -26,6 +27,7 @@ const LandingPage = () => {
       <div><GallerySlider /></div>
       <div><VideoList /></div>
       <div><Feedback /></div>
+      <div><MessageUs /></div>
       <div><Footer /></div>
     </>
   );
