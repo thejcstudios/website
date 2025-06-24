@@ -9,10 +9,11 @@ import GallerySlider from './components/GallerySlider';
 import VideoList from './components/VideoList';
 import Feedback from './components/Feedback';
 import MessageUs from './components/MessageUs';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; // Make sure Footer is imported
 import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
 import VideoGalleryCollection from './pages/VideoGalleryCollection';
+import ImageGallery from './pages/ImageGalleryCollection';
 
 // Landing page layout as a separate component
 const LandingPage = () => {
@@ -33,14 +34,39 @@ const LandingPage = () => {
   );
 };
 
+// New component to encapsulate VideoGalleryCollection and Footer
+const VideoCollectionPageLayout = () => {
+  return (
+    <>
+      <VideoGalleryCollection />
+      {/* Removed <ImageGallery /> from here as requested */}
+      <Footer /> {/* The Footer is now included here */}
+    </>
+  );
+};
+
+// New component to encapsulate ImageGallery and Footer
+const ImageCollectionPageLayout = () => {
+  return (
+    <>
+      <ImageGallery />
+      <Footer />
+    </>
+  );
+};
+
+
 const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/login" element={<Login1 />} />
+        <Route path="/login" element={<Login1 />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/videos" element={<VideoGalleryCollection />} />
+        {/* Use the new VideoCollectionPageLayout component for the /videos route */}
+        <Route path="/videos" element={<VideoCollectionPageLayout />} />
+        {/* Use the new ImageCollectionPageLayout component for the /images route */}
+        <Route path="/images" element={<ImageCollectionPageLayout />} />
       </Routes>
     </Router>
   );

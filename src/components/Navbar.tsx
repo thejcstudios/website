@@ -37,8 +37,8 @@ const Navbar = () => {
           <div className="navbar-desktop-menu">
             <NavLink icon={<Home size={20} />} text="Home" href="#hero" />
             <NavLink icon={<Info size={20} />} text="About Us" href="#about" />
-            <NavLink icon={<Image size={20} />} text="Photo Gallery" href="#photo" />
-            <NavLink icon={<Video size={20} />} text="Video Gallery" href="#video" />
+            <NavLink icon={<Image size={20} />} text="Photo Gallery" href="/images" />
+            <NavLink icon={<Video size={20} />} text="Video Gallery" href="/videos" />
             <NavLink icon={<Mail size={20} />} text="Message Us" href="#message" />
           </div>
 

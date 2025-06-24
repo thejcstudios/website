@@ -1,5 +1,5 @@
 
-/* Import Google Font for consistency - using a slightly more refined weight range */
+/* Import Google Font for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 body {
@@ -21,15 +21,18 @@ body {
 }
 
 .video-gallery-title {
-  font-size: 3.8rem; /* Larger, more impactful title */
-  font-weight: 800; /* Extra bold for prominence */
-  color: #e6b800; /* Richer, deeper gold */
-  margin-bottom: 3rem; /* More space below the title */
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
   text-align: center;
-  text-shadow: 0 6px 15px rgba(230, 184, 0, 0.4); /* Stronger, more luxurious gold shadow */
-  letter-spacing: -0.03em; /* Slightly tighter letter spacing for modern look */
-}
+  text-shadow: 0 6px 15px rgba(230, 184, 0, 0.4);
+  letter-spacing: -0.03em;
 
+  /* Gradient gold text */
+  background: linear-gradient(90deg, #fff9d1, #f0c75e, #e6b800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* Category Filter Styles */
 .category-filter-container {
   display: flex;
@@ -70,10 +73,10 @@ body {
 
 .video-grid {
   display: grid;
-  gap: 2rem; /* Increased space between videos */
+  gap: 1.5rem; /* Slightly reduced gap for more inline items */
   width: 100%;
-  max-width: 1280px; /* Wider max width for more videos per row on large screens */
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax for slightly larger items */
+  max-width: 1400px; /* Increased max-width to accommodate more columns */
+  grid-template-columns: repeat(5, 1fr); /* FORCED 5 COLUMNS ON LARGE SCREENS */
   justify-content: center;
 }
 
@@ -92,13 +95,20 @@ body {
 }
 
 .video-item-title {
-  font-size: 1.3rem; /* Slightly larger video titles */
-  font-weight: 600; /* Medium-bold for readability */
-  color: #e6b800; /* Richer gold color for video titles */
-  padding: 1.2rem; /* Increased padding */
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1.2rem;
   text-align: center;
-  background-color: #0a0a0a; /* Darker background for title strip */
-  border-top: 1px solid rgba(230, 184, 0, 0.2); /* Subtle gold line above title */
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(230, 184, 0, 0.2);
+
+  /* Gradient gold text */
+  background: linear-gradient(90deg, #fff9d1, #f0c75e, #e6b800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Optional fallback for non-WebKit browsers */
+  color: #e6b800;
 }
 
 .video-iframe-wrapper {
@@ -118,6 +128,17 @@ body {
   border: 0;
 }
 
+/* Button Container for alignment */
+.header-buttons {
+  display: flex;
+  gap: 1rem; /* Space between buttons */
+  margin-bottom: 2rem; /* Space below buttons, above title */
+  align-self: flex-start; /* Align to the start of the container */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: flex-start; /* Align to start when single button */
+  width: 100%; /* Take full width for centering to work */
+}
+
 /* Return Home Button Styles */
 .return-home-button {
   background-color: #e6b800; /* Gold background */
@@ -134,8 +155,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem; /* Space below button, above title */
-  align-self: flex-start; /* Align to the start of the container */
 }
 
 .return-home-button:hover {
@@ -143,6 +162,8 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(230, 184, 0, 0.6);
 }
+
+/* Removed Start Now Button Styles */
 
 /* Loading and Error Message Styles */
 .status-message {
@@ -157,58 +178,107 @@ body {
   color: #ff6b6b; /* Red color for errors */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .video-gallery-title {
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-  }
-  .category-filter-container {
-    gap: 0.6rem;
-    margin-bottom: 2rem;
-  }
-  .category-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  .video-grid {
-    gap: 1.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  .video-item-title {
-    font-size: 1.1rem;
-    padding: 1rem;
-  }
-  .return-home-button {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    align-self: center; /* Center on smaller screens */
-  }
+/* Responsive Adjustments for 5-column layout for videos */
+@media (min-width: 1400px) { /* On very large screens, maintain 5 columns */
+    .video-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
-@media (max-width: 480px) {
-  .video-gallery-title {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-  }
-  .video-gallery-container {
-    padding: 2rem 1rem;
-  }
-  .category-filter-container {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center stacked buttons */
-    margin-bottom: 1.5rem;
-  }
-  .category-button {
-    width: 80%; /* Make buttons wider when stacked */
-  }
-  .video-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-  }
-  .return-home-button {
-    width: 80%; /* Make button wider on small screens */
-    align-self: center;
-  }
+@media (max-width: 1399px) and (min-width: 1000px) { /* 4 columns on large screens */
+    .video-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1100px;
+    }
 }
 
+@media (max-width: 999px) and (min-width: 768px) { /* 3 columns on medium screens */
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+    .video-gallery-title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .category-filter-container {
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+    }
+    .category-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .video-item-title {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    .header-buttons {
+        margin-bottom: 1.5rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .return-home-button {
+        width: auto;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 480px) { /* 2 columns on small tablets */
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+    }
+    .video-gallery-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .category-filter-container {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .category-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    .video-item-title {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    .return-home-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 479px) { /* 1 column on mobile */
+    .video-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    .video-gallery-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .video-gallery-container {
+        padding: 2rem 1rem;
+    }
+    .category-filter-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .category-button {
+        width: 80%;
+    }
+    .video-item-title {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+    .return-home-button {
+        width: 80%;
+    }
+}

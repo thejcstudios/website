@@ -1,0 +1,329 @@
+
+        /* Import Google Font for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .drive-gallery-container { /* Renamed for this component */
+          min-height: 100vh;
+          background-color: #0d0d0d; /* Deeper, more sophisticated dark background */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 3.5rem 2rem; /* Increased overall padding for more breathing room */
+          font-family: 'Inter', sans-serif;
+          color: #f0f0f0; /* Slightly off-white for softer contrast */
+          line-height: 1.6; /* Improved line height for readability */
+        }
+
+        .drive-gallery-title { /* Renamed for this component */
+          font-size: 3.8rem; /* Larger, more impactful title */
+          font-weight: 800; /* Extra bold for prominence */
+          color: #e6b800; /* Richer, deeper gold */
+          margin-bottom: 3rem; /* More space below the title */
+          text-align: center;
+          text-shadow: 0 6px 15px rgba(230, 184, 0, 0.4); /* Stronger, more luxurious gold shadow */
+          letter-spacing: -0.03em; /* Slightly tighter letter spacing for modern look */
+        }
+
+        /* Category Filter Styles (reused from video gallery) */
+        .category-filter-container {
+          display: flex;
+          flex-wrap: wrap; /* Allow wrapping on small screens */
+          justify-content: center;
+          gap: 0.8rem; /* Original space between buttons */
+          margin-bottom: 3rem; /* Original space below categories and above image grid */
+          max-width: 1280px; /* Original max width */
+          width: 100%;
+        }
+
+        .category-button {
+          background-color: #1a1a1a; /* Dark button background */
+          color: #f0f0f0; /* Light text */
+          border: 1px solid #444444; /* Subtle border */
+          padding: 0.6rem 1.2rem; /* Original padding */
+          border-radius: 0.5rem; /* Original rounded corners */
+          font-size: 1rem; /* Original font size */
+          font-weight: 500;
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .category-button:hover {
+          background-color: #2a2a2a; /* Slightly lighter on hover */
+          border-color: #e6b800; /* Gold border on hover */
+          color: #e6b800; /* Gold text on hover */
+        }
+
+        .category-button.active {
+          background-color: #e6b800; /* Gold background for active button */
+          color: #0a0a0a; /* Dark text for active button */
+          border-color: #e6b800;
+          font-weight: 700;
+          box-shadow: 0 4px 10px rgba(230, 184, 0, 0.4); /* Stronger shadow for active */
+        }
+
+        .image-grid {
+          display: grid;
+          gap: 1.5rem; /* Slightly reduced gap for 5 columns */
+          width: 100%;
+          max-width: 1400px; /* Increased max-width to accommodate 5 columns */
+          grid-template-columns: repeat(5, 1fr); /* FORCED 5 COLUMNS ON LARGE SCREENS */
+          justify-content: center;
+        }
+
+        .image-item {
+          background-color: #1c1c1c; /* Slightly lighter black for item background, adds depth */
+          border-radius: 0.8rem; /* Original slightly more rounded corners */
+          overflow: hidden;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(230, 184, 0, 0.1); /* Original deeper shadow with subtle gold outline */
+          border: none; /* Removed default border, relying on box-shadow outline */
+          transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smoother transitions */
+          cursor: pointer; /* Indicate clickable */
+        }
+
+        .image-item:hover {
+          transform: translateY(-8px); /* Original more pronounced lift effect on hover */
+          box-shadow: 0 15px 30px rgba(230, 184, 0, 0.4), 0 0 0 2px #e6b800; /* Original stronger gold shadow and border on hover */
+        }
+
+        .image-item img {
+          width: 100%;
+          height: 180px; /* Specific height for images for smaller look */
+          object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease-out;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.05); /* Slight zoom on image hover */
+        }
+
+        /* Removed .image-item-title styles as titles are no longer displayed */
+
+        /* Button Container for alignment */
+        .header-buttons {
+          display: flex;
+          gap: 1rem; /* Original space between buttons */
+          margin-bottom: 2rem; /* Space below buttons, above title */
+          align-self: flex-start; /* Align to the start of the container */
+          flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+          justify-content: flex-start; /* Align to start when single button */
+          width: 100%; /* Take full width for centering to work */
+        }
+
+        /* Return Home Button Styles */
+        .return-home-button {
+          background-color: #e6b800; /* Gold background */
+          color: #0a0a0a; /* Dark text */
+          border: none;
+          padding: 0.8rem 1.8rem; /* Original padding */
+          border-radius: 0.5rem; /* Original rounded corners */
+          font-size: 1.1rem; /* Original font size */
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+          box-shadow: 0 4px 10px rgba(230, 184, 0, 0.4);
+          text-decoration: none; /* Remove underline for link */
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .return-home-button:hover {
+          background-color: #cc9900; /* Darker gold on hover */
+          transform: translateY(-2px); /* Original lift */
+          box-shadow: 0 6px 15px rgba(230, 184, 0, 0.6); /* Original shadow */
+        }
+
+        /* Lightbox/Modal Styles */
+        .lightbox-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox-overlay.visible {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .lightbox-content {
+          position: relative;
+          max-width: 90%; /* Original max width */
+          max-height: 90%; /* Original max height */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .lightbox-content img {
+          max-width: 100%;
+          max-height: 80vh; /* Original max height */
+          display: block;
+          border-radius: 0.8rem; /* Original rounded corners */
+          box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4); /* Original shadow */
+          border: 2px solid #e6b800; /* Original border thickness */
+        }
+
+        .lightbox-close-button {
+          position: absolute;
+          top: -20px; /* Original adjusted position */
+          right: -20px;
+          background-color: #e6b800;
+          color: #0a0a0a;
+          border: none;
+          border-radius: 50%;
+          width: 40px; /* Original size */
+          height: 40px;
+          font-size: 1.5rem; /* Original font size */
+          font-weight: bold;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          z-index: 1001;
+        }
+
+        .lightbox-close-button:hover {
+          background-color: #cc9900;
+          transform: rotate(90deg);
+        }
+
+        /* Loading and Error Message Styles */
+        .status-message {
+          color: #f0f0f0;
+          font-size: 1.5rem;
+          font-weight: 500;
+          text-align: center;
+          margin-top: 3rem;
+        }
+
+        .error-message {
+          color: #ff6b6b; /* Red color for errors */
+        }
+
+        /* Responsive Adjustments for 5-column layout */
+        @media (min-width: 1400px) { /* On very large screens, maintain 5 columns */
+            .image-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (max-width: 1399px) and (min-width: 1000px) { /* 4 columns on large screens */
+            .image-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1100px;
+            }
+        }
+
+        @media (max-width: 999px) and (min-width: 768px) { /* 3 columns on medium screens */
+            .image-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 900px;
+            }
+            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+            .category-filter-container {
+                gap: 0.6rem;
+                margin-bottom: 2rem;
+            }
+            .category-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            .image-item img {
+                height: 180px;
+            }
+            .header-buttons {
+                margin-bottom: 1.5rem;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .return-home-button {
+                width: auto;
+            }
+            .lightbox-close-button {
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 767px) and (min-width: 480px) { /* 2 columns on small tablets */
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 500px;
+            }
+            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .category-filter-container {
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .category-button {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            .image-item img {
+                height: 160px;
+            }
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 1.5rem;
+            }
+            .return-home-button {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 479px) { /* 1 column on mobile */
+            .image-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .drive-gallery-container, .image-gallery-container { /* Renamed for this component */
+                padding: 2rem 1rem;
+            }
+            .category-filter-container {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            .category-button {
+                width: 80%;
+            }
+            .image-item img {
+                height: 120px;
+            }
+            .return-home-button {
+                width: 80%;
+            }
+        }
