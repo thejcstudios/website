@@ -85,7 +85,7 @@ function VideoGalleryCollection() {
         {/* Header Buttons */}
         <div className="header-buttons">
           <a href="/" className="return-home-button">
-            Return Home
+            Return
           </a>
           {/* The "Start Now" button has been removed */}
         </div>
@@ -110,7 +110,7 @@ function VideoGalleryCollection() {
         ) : error ? (
           <p className="status-message error-message">{error}</p>
         ) : filtered.length === 0 ? (
-          <p className="status-message">No videos found for this category. Please ensure videos in Google Drive are publicly shared.</p>
+          <p className="status-message">No videos found for this category.</p>
         ) : (
           <div className="video-grid">
             {filtered.map(video => (

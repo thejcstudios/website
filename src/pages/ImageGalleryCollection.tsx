@@ -102,7 +102,7 @@ const DriveImageGallery: React.FC = () => {
         {/* Header Buttons */}
         <div className="header-buttons">
           <a href="/" className="return-home-button">
-            Return Home
+            Return
           </a>
         </div>
 
@@ -122,11 +122,11 @@ const DriveImageGallery: React.FC = () => {
         </div>
 
         {loading ? (
-          <p className="status-message">Loading images from Google Drive...</p>
+          <p className="status-message">Loading images</p>
         ) : error ? (
           <p className="status-message error-message">{error}</p>
         ) : filteredImages.length === 0 ? (
-          <p className="status-message">No images found for this category or in the specified Google Drive folder.</p>
+          <p className="status-message">No images found for this category.</p>
         ) : (
           <div className="image-grid">
             {filteredImages.map((image) => (
