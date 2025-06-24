@@ -59,10 +59,10 @@ const Navbar = () => {
           className={`navbar-mobile-menu ${isOpen ? 'is-open' : ''}`}
         >
           <div className="navbar-mobile-menu-items">
-            <MobileNavLink icon={<Home size={20} />} text="Home" href="#hero" onClick={toggleMenu} />
+            <MobileNavLink icon={<Home size={20} />} text="Home" href="/" onClick={toggleMenu} />
             <MobileNavLink icon={<Info size={20} />} text="About Us" href="#about" onClick={toggleMenu} />
-            <MobileNavLink icon={<Image size={20} />} text="Photo Gallery" href="#photo" onClick={toggleMenu} />
-            <MobileNavLink icon={<Video size={20} />} text="Video Gallery" href="#video" onClick={toggleMenu} />
+            <MobileNavLink icon={<Image size={20} />} text="Photo Gallery" href="/images" onClick={toggleMenu} />
+            <MobileNavLink icon={<Video size={20} />} text="Video Gallery" href="/videos" onClick={toggleMenu} />
             <MobileNavLink icon={<Mail size={20} />} text="Message Us" href="#message" onClick={toggleMenu} />
           </div>
         </div>
