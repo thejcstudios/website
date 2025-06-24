@@ -106,7 +106,7 @@ const DriveImageGallery: React.FC = () => {
           </a>
         </div>
 
-        <h1 className="drive-gallery-title">Google Drive Image Gallery</h1>
+        <h1 className="drive-gallery-title">Our Image Gallery</h1>
 
         {/* Category Filter Buttons */}
         <div className="category-filter-container">

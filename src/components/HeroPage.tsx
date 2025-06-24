@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
           href="/videos" // <--- Replace with your desired URL
           className="my-app-button"
         >
-          Sample Videos
+          Demos
         </a>
         </div>
       </div>
