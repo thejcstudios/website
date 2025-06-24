@@ -1,0 +1,214 @@
+
+/* Import Google Font for consistency - using a slightly more refined weight range */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.video-gallery-container {
+  min-height: 100vh;
+  background-color: #0d0d0d; /* Deeper, more sophisticated dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 2rem; /* Increased overall padding for more breathing room */
+  font-family: 'Inter', sans-serif;
+  color: #f0f0f0; /* Slightly off-white for softer contrast */
+  line-height: 1.6; /* Improved line height for readability */
+}
+
+.video-gallery-title {
+  font-size: 3.8rem; /* Larger, more impactful title */
+  font-weight: 800; /* Extra bold for prominence */
+  color: #e6b800; /* Richer, deeper gold */
+  margin-bottom: 3rem; /* More space below the title */
+  text-align: center;
+  text-shadow: 0 6px 15px rgba(230, 184, 0, 0.4); /* Stronger, more luxurious gold shadow */
+  letter-spacing: -0.03em; /* Slightly tighter letter spacing for modern look */
+}
+
+/* Category Filter Styles */
+.category-filter-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center;
+  gap: 0.8rem; /* Space between buttons */
+  margin-bottom: 3rem; /* Space below categories and above video grid */
+  max-width: 1280px;
+  width: 100%;
+}
+
+.category-button {
+  background-color: #1a1a1a; /* Dark button background */
+  color: #f0f0f0; /* Light text */
+  border: 1px solid #444444; /* Subtle border */
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.category-button:hover {
+  background-color: #2a2a2a; /* Slightly lighter on hover */
+  border-color: #e6b800; /* Gold border on hover */
+  color: #e6b800; /* Gold text on hover */
+}
+
+.category-button.active {
+  background-color: #e6b800; /* Gold background for active button */
+  color: #0a0a0a; /* Dark text for active button */
+  border-color: #e6b800;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(230, 184, 0, 0.4); /* Stronger shadow for active */
+}
+
+.video-grid {
+  display: grid;
+  gap: 2rem; /* Increased space between videos */
+  width: 100%;
+  max-width: 1280px; /* Wider max width for more videos per row on large screens */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjusted minmax for slightly larger items */
+  justify-content: center;
+}
+
+.video-item {
+  background-color: #1c1c1c; /* Slightly lighter black for item background, adds depth */
+  border-radius: 0.8rem; /* Slightly more rounded corners */
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(230, 184, 0, 0.1); /* Deeper shadow with subtle gold outline */
+  border: none; /* Removed default border, relying on box-shadow outline */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Smoother transitions */
+}
+
+.video-item:hover {
+  transform: translateY(-8px); /* More pronounced lift effect on hover */
+  box-shadow: 0 15px 30px rgba(230, 184, 0, 0.4), 0 0 0 2px #e6b800; /* Stronger gold shadow and border on hover */
+}
+
+.video-item-title {
+  font-size: 1.3rem; /* Slightly larger video titles */
+  font-weight: 600; /* Medium-bold for readability */
+  color: #e6b800; /* Richer gold color for video titles */
+  padding: 1.2rem; /* Increased padding */
+  text-align: center;
+  background-color: #0a0a0a; /* Darker background for title strip */
+  border-top: 1px solid rgba(230, 184, 0, 0.2); /* Subtle gold line above title */
+}
+
+.video-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Return Home Button Styles */
+.return-home-button {
+  background-color: #e6b800; /* Gold background */
+  color: #0a0a0a; /* Dark text */
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(230, 184, 0, 0.4);
+  text-decoration: none; /* Remove underline for link */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; /* Space below button, above title */
+  align-self: flex-start; /* Align to the start of the container */
+}
+
+.return-home-button:hover {
+  background-color: #cc9900; /* Darker gold on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(230, 184, 0, 0.6);
+}
+
+/* Loading and Error Message Styles */
+.status-message {
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.error-message {
+  color: #ff6b6b; /* Red color for errors */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .video-gallery-title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+  .category-filter-container {
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .category-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .video-grid {
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .video-item-title {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+  .return-home-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    align-self: center; /* Center on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-gallery-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .video-gallery-container {
+    padding: 2rem 1rem;
+  }
+  .category-filter-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center stacked buttons */
+    margin-bottom: 1.5rem;
+  }
+  .category-button {
+    width: 80%; /* Make buttons wider when stacked */
+  }
+  .video-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+  .return-home-button {
+    width: 80%; /* Make button wider on small screens */
+    align-self: center;
+  }
+}
+

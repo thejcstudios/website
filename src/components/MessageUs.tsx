@@ -70,6 +70,7 @@ function MessageUs() {
                 value={formData.name}
                 onChange={handleChange}
                 className="my-app-form-input"
+                autoComplete="name"
                 required
               />
             </div>
@@ -82,19 +83,21 @@ function MessageUs() {
                 value={formData.email}
                 onChange={handleChange}
                 className="my-app-form-input"
+                autoComplete="email"
                 required
               />
             </div>
             <div className="my-app-form-group">
               <label htmlFor="phoneNumber" className="my-app-form-label">Phone Number (Optional):</label>
+              
               <input
-                type="tel" // Use type="tel" for phone numbers
+                type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
                 value={formData.phoneNumber}
                 onChange={handleChange}
                 className="my-app-form-input"
-                // Not required as per "Optional" in label, remove 'required' if optional
+                autoComplete="tel"
               />
             </div>
             <div className="my-app-form-group">
@@ -106,19 +109,22 @@ function MessageUs() {
                 value={formData.subject}
                 onChange={handleChange}
                 className="my-app-form-input"
+                autoComplete="off" // no reliable autocomplete value for custom fields like subject
                 required
               />
             </div>
             <div className="my-app-form-group">
               <label htmlFor="message" className="my-app-form-label">Message:</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="my-app-form-textarea"
-                required
-              ></textarea>
+                          
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className="my-app-form-textarea"
+              autoComplete="off"
+              required
+            ></textarea>
             </div>
             <button type="submit" className="my-app-form-button">Send Message</button>
           </form>

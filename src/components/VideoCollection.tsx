@@ -47,6 +47,7 @@ type VideoCollectionProps = {
             );
           })}
         </div>
+      
       </div>
     );
   }

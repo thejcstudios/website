@@ -214,11 +214,7 @@
 
 .my-app-video-wrapper {
   width: 100%;
-  max-width: 32rem; /* max-w-lg */
-  border-radius: 0.5rem; /* rounded-lg */
-  overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
-  border: 2px solid #ffffff; /* border-2 border-white */
+  height: auto;
 }
 
 .my-app-video-element {

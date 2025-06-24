@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
                  <div className="hero-text-container">
                     <h1 className="hero-heading">Where Every Frame Tells Your Story</h1>
                     <p className="hero-paragraph">At JC Studios, we go beyond simply capturing images—we create visual stories that move, inspire, and endure. Whether it’s a romantic wedding, a high-profile corporate event, a compelling business commercial, or a vibrant social gathering, we bring a creative eye and professional edge to every project. Our team is dedicated to turning your most important moments and brand visions into stunning, high-quality visuals that speak volumes. Let JC Studios frame your story—one unforgettable shot at a time.</p>
-
+<div className='hero-button'>
         <a
           href="https://m.me/thejcstudios" // <--- Replace with your desired URL
           target="_blank" // Opens the link in a new tab
@@ -129,7 +129,17 @@ const Hero: React.FC = () => {
         >
           Start Now
         </a>
+        <a
+          href="/videos" // <--- Replace with your desired URL
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Recommended for security when using target="_blank"
+          className="my-app-button"
+        >
+          Sample Videos
+        </a>
+        </div>
       </div>
+
             </section>
            
         </main>

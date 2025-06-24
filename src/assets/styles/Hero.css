@@ -510,6 +510,7 @@ section.hero-startup .hero-gradient {
     z-index: 1; /* Ensures button content is above sweep effect */
     transition: color 0.3s ease-in-out; /* Smooth text color transition */
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); /* Subtle gold shadow */
+    margin: 2%;
 
     /* Link-specific styling for the <a> tag */
     text-decoration: none; /* Remove underline from link */
@@ -544,4 +545,10 @@ section.hero-startup .hero-gradient {
 
   .my-app-button:hover::before {
     transform: translateX(0%); /* Sweep across to the right */
+  }
+
+  .hero-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }

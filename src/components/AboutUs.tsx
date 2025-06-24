@@ -119,7 +119,7 @@ function AboutUs() {
                   key={video.id} // Added key prop for list rendering
                   src={`https://player.vimeo.com/video/${video.vimeoId}`}
                   width="100%"
-                  height="281"
+                  height="400"
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture"

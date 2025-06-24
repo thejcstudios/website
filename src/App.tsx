@@ -12,6 +12,7 @@ import MessageUs from './components/MessageUs';
 import Footer from './components/Footer';
 import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
+import VideoGalleryCollection from './pages/VideoGalleryCollection';
 
 // Landing page layout as a separate component
 const LandingPage = () => {
@@ -39,6 +40,7 @@ const App = () => {
       <Route path="/login" element={<Login1 />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/videos" element={<VideoGalleryCollection />} />
       </Routes>
     </Router>
   );

@@ -78,6 +78,14 @@ const VideoList: React.FC = () => {
           ))}
         </div>
       </div>
+      <a
+          href="/videos" // <--- Replace with your desired URL
+          target="_blank" // Opens the link in a new tab
+          rel="noopener noreferrer" // Recommended for security when using target="_blank"
+          className="my-app-button"
+        >
+          Sample Videos
+        </a>
     </div>
     </section>
   );
