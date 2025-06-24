@@ -8,11 +8,10 @@ import Services from './components/Services';
 import GallerySlider from './components/GallerySlider';
 import VideoList from './components/VideoList';
 import Feedback from './components/Feedback';
-import MessageUs from './components/MessageUs';
 import Footer from './components/Footer';
 import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
-/*import VideoGalleryCollection from './pages/VideoGalleryCollection';*/
+import VideoGalleryCollection from './pages/VideoGalleryCollection';
 
 // Landing page layout as a separate component
 const LandingPage = () => {
@@ -27,7 +26,6 @@ const LandingPage = () => {
       <div><GallerySlider /></div>
       <div><VideoList /></div>
       <div><Feedback /></div>
-      <div><MessageUs /></div>
       <div><Footer /></div>
     </>
   );
@@ -40,6 +38,7 @@ const App = () => {
       <Route path="/login" element={<Login1 />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/videos" element={<VideoGalleryCollection />} />
       </Routes>
     </Router>
   );
