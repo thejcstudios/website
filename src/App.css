@@ -570,48 +570,7 @@ h1 {
 
 }
 
-/* videoList */
 
-.gallery-container2 {
-  background: #FFFAF0;
-  color: black;
-  text-align: center;
-}
-
-.gallery-grid2 {
-  margin-bottom: 5%;
-  display: flex;
-  z-index: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.fbcontent2 {
-  width: 100%;
-  position: relative;
-  height: 100%;
-  display: flex
-;
-  flex-wrap: nowrap;
-  flex-direction: column;
-}
-
-.fbtitle2 {
-  width: 100%;
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-.gallery-container2 h1 {
-  margin-top: 5%;
-  z-index: 1;
-}
 
 .scroll-fade {
   opacity: 0;

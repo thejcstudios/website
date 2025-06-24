@@ -1,91 +1,125 @@
-import { useFacebookSDK } from "./hooks/useFacebookSDK";
-import { useInView } from "./hooks/useInView";
+import React, { useEffect, useState } from 'react';
+import '../assets/styles/VideoList.css'
 
-type FacebookPost = {
-  id: number;
-  href: string;
-  type: "post" | "video";
+// Define the type for Google Drive videos
+type GoogleDriveVideo = {
+  id: string;
+  googleDriveId: string;
+  title: string;
+  category: 'Wedding' | 'Prenup' | 'Event' | 'Corporate' | 'Ads' | 'Other'; // Assuming categories can be inferred or default
 };
 
+// Replace with your Google Drive Video Folder ID and API Key
+const VIDEO_FOLDER_ID = '1HyHaraR3pwPjhOWhA6CsmyBR_f9xJJk3'; // Your provided folder ID
+const API_KEY = 'AIzaSyALuh8edqL11s_ed3kauCVNFNdE65DLEmU';     // Your provided API Key
+
 const VideoList: React.FC = () => {
-  useFacebookSDK();
+  const [videos, setVideos] = useState<GoogleDriveVideo[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const { ref: titleRef, isVisible: isTitleVisible } = useInView(0.1, "0px", true);
-  const { ref: textRef, isVisible: isTextVisible } = useInView(0.1, "0px", true);
+  useEffect(() => {
+    const fetchVideos = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        // Construct the Google Drive API URL to list video files in the specified folder
+        const url = `https://www.googleapis.com/drive/v3/files?q='${VIDEO_FOLDER_ID}'+in+parents+and+mimeType+contains+'video/'&key=${API_KEY}&fields=files(id,name,mimeType)`;
 
-  const posts: FacebookPost[] = [
-    {
-      id: 1,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/1246976250422040"
-    },
-    {
-      id: 2,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/10069791539746027"
-    },
-    {
-      id: 3,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/1214634553636396"
-    },
-    {
-      id: 4,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/1243001323440628"
-    },
-    {
-      id: 5,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/572494098812638"
-    },
-    {
-      id: 6,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/1598753970735121"
-    }
-  ];
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}.`);
+        }
+
+        const data = await response.json();
+        if (!data.files) {
+          throw new Error("No video files found or invalid response from Google Drive API.");
+        }
+
+        const fetchedVideos: GoogleDriveVideo[] = data.files.map((file: { id: string; name: string; mimeType: string }) => {
+          let category: GoogleDriveVideo['category'] = 'Other';
+          const lowerCaseName = file.name.toLowerCase();
+
+          // Simple logic to infer category from file name (you can customize this)
+          if (lowerCaseName.includes('wedding')) {
+            category = 'Wedding';
+          } else if (lowerCaseName.includes('prenup') || lowerCaseName.includes('engagement')) {
+            category = 'Prenup';
+          } else if (lowerCaseName.includes('event') || lowerCaseName.includes('party')) {
+            category = 'Event';
+          } else if (lowerCaseName.includes('corporate') || lowerCaseName.includes('business')) {
+            category = 'Corporate';
+          } else if (lowerCaseName.includes('ad') || lowerCaseName.includes('commercial')) {
+            category = 'Ads';
+          }
+
+          return {
+            id: file.id, // Use Google Drive file ID as the unique ID
+            googleDriveId: file.id, // Store the Google Drive ID for iframe src
+            title: file.name.replace(/\.(mp4|mov|avi|webm|mkv)$/i, ''), // Clean up file extension for title display
+            category: category,
+          };
+        });
+
+        setVideos(fetchedVideos);
+      } catch (err: any) {
+        setError(`Failed to load videos: ${err.message}. Please ensure the Google Drive folder and its video contents are publicly accessible ('Anyone with the link can view') and your API key is correct.`);
+        console.error("Google Drive API fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVideos();
+  }, []);
+
+  // Display only the first 6 videos for the landing page section
+  const videosToDisplay = videos.slice(0, 6);
 
   return (
-    <section id="video">
-    <div className="gallery-container2">
-      <div className="fbtitle2">
-        <h1
-          ref={titleRef}
-          className={`scroll-fade ${isTitleVisible ? "visible" : ""}`}
-        >
-          Where Raw Footage Becomes Cinematic Magic
-        </h1>
-        <p
-          ref={textRef}
-          className={`scroll-fade ${isTextVisible ? "visible" : ""}`}
-        >
-          Bring your vision to life with professional video editing that captivates, engages, and inspires. Whether it’s for social media, business, events, or personal projects, we transform raw footage into polished, story-driven content that resonates. From seamless cuts to cinematic transitions, every frame is crafted with precision and creativity. Let your videos do more than just play—let them speak.
-        </p>
-      </div>
-      <div className="fbcontent2">
-        <div className="gallery-grid2">
-          {posts.map((post) => (
-            <div key={post.id} className="gallery-item">
-              <div
-                className="fb-video"
-                data-href={post.href}
-                data-width="500"
-                data-show-text="false"
-                data-allowfullscreen="true"
-              ></div>
-            </div>
-          ))}
+    <>
+    
+
+      <section id="video">
+        <div className="gallery-container2">
+          <div className="fbtitle2">
+            <h1>Where Raw Footage Becomes Cinematic Magic</h1>
+            <p>
+              Bring your vision to life with professional video editing that captivates, engages, and inspires. Whether it’s for social media, business, events, or personal projects, we transform raw footage into polished, story-driven content that resonates. From seamless cuts to cinematic transitions, every frame is crafted with precision and creativity. Let your videos do more than just play—let them speak.
+            </p>
+          </div>
+          <div className="fbcontent2">
+            {loading ? (
+              <p className="status-message">Loading videos...</p>
+            ) : error ? (
+              <p className="status-message error-message">{error}</p>
+            ) : videosToDisplay.length === 0 ? (
+              <p className="status-message">No videos found. Please ensure Google Drive folder is accessible and contains videos.</p>
+            ) : (
+              <div className="gallery-grid2">
+                {videosToDisplay.map((video) => (
+                  <div key={video.id} className="video-item">
+                    <div className="video-iframe-wrapper">
+                      <iframe
+                        src={`https://drive.google.com/file/d/${video.googleDriveId}/preview`}
+                        title={video.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                        allowFullScreen
+                        frameBorder="0"
+                      ></iframe>
+                    </div>
+                    <p className="video-item-title">{video.title}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <a href="/videos" className="my-app-button">
+            Explore More Videos
+          </a>
         </div>
-      </div>
-      <a
-          href="/videos" // <--- Replace with your desired URL
-          className="my-app-button"
-        >
-          Sample Videos
-        </a>
-    </div>
-    </section>
+      </section>
+    </>
   );
 };
 
