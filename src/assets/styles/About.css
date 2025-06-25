@@ -73,10 +73,37 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 0.5rem;
   transform: scale(1);
-  transition: transform 300ms ease-in-out; /* transition-transform duration-300 ease-in-out */
+  transition: transform 300ms ease-in-out;
+  position: relative;
+  z-index: 1; /* Ensure the image stays above pseudo-borders */
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* Container needed to make positioning relative */
+.image-border-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Top-left corner border */
+.image-border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 150px;
+  border-top: 3px solid #e8ce0b;
+  border-left: 3px solid #e8ce0b;
+  border-top-left-radius: 8px;
+  z-index: 2;
+}
+
+
+
 
 .my-app-image-wrapper:hover .my-app-image-main {
   transform: scale(1.05); /* group-hover:scale-105 */
@@ -124,7 +151,7 @@
 
 .my-app-hover-description {
   color: #ffffff; /* text-white */
-  font-size: 1rem; /* Slightly larger text */
+  font-size: clamp(.1rem, 1.2vw, 20rem);
   font-weight: 300; /* font-light */
   text-align: center;
   line-height: 1.5; /* Better readability */
@@ -142,6 +169,13 @@
   .my-app-h1 {
     font-size: 2.25rem; /* lg:text-4xl */
   }
+  .my-app-hover-description {
+    color: #ffffff; /* text-white */
+    font-size: clamp(.1rem, .6vw, 20rem);
+    font-weight: 300; /* font-light */
+    text-align: center;
+    line-height: 1.5; /* Better readability */
+  }
 }
 
 .my-app-p {
@@ -153,6 +187,8 @@
 
 /* Specific styles for the second hover image */
 .my-app-second-image-wrapper .my-app-hover-overlay {
+  width: 150%; /* Make it wider than parent */
+  height: 150%; /* Make it taller than parent */
   background-color: rgba(0, 0, 0, 0.875); /* Slightly more opaque blue background */
 }
 

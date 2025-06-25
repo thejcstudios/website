@@ -99,12 +99,7 @@ const DriveImageGallery: React.FC = () => {
       
 
       <div className="drive-gallery-container">
-        {/* Header Buttons */}
-        <div className="header-buttons">
-          <a href="/" className="return-home-button">
-            Return
-          </a>
-        </div>
+      
 
         <h1 className="drive-gallery-title">Our Image Gallery</h1>
 

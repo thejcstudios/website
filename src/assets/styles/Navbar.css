@@ -12,8 +12,6 @@
     backdrop-filter: blur(16px); /* backdrop-blur-lg */
     -webkit-backdrop-filter: blur(16px); /* For Safari support */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-    border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
-    border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
 }
 
 .navbar-container {
@@ -110,43 +108,93 @@
 
 /* NavLink (Desktop) styles */
 .nav-link {
+    position: relative; /* Required for positioning the pseudo-element */
     display: flex;
     align-items: center;
-    gap: 0.25rem; /* space-x-1 */
-    color: #d2d2d3; /* text-gray-700 */
-    font-weight: 500; /* font-medium */
-    font-size: 1rem; /* text-base */
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* transition-colors duration-200 ease-in-out */
-    padding: 0.5rem 0.75rem; /* px-3 py-2 */
-    border-radius: 0.5rem; /* rounded-lg */
-    text-decoration: none; /* Remove underline from links */
-}
-
-.nav-link:hover {
-    color: #e5eb25; /* hover:text-blue-600 */
-}
+    gap: 0.25rem;
+    color: #d2d2d3;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    overflow: hidden; /* Ensure the effect doesn't spill out */
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    pointer-events: none;
+  }
+  
+  .nav-link:hover::before {
+    left: 125%; /* Move across the link */
+  }
+  
+  .nav-link:hover {
+    color: #e5eb25;
+  }
+  
 
 /* Mobile NavLink styles */
 .mobile-nav-link {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* space-x-2 */
-    width: 100%; /* w-full */
-    text-align: center;
-    padding: 0.5rem 1rem; /* py-2 px-4 */
-    color: #e9e9e9; /* text-gray-700 */
-    font-weight: 500; /* font-medium */
-    font-size: 1.125rem; /* text-lg */
-    border-radius: 0.375rem; /* rounded-md */
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; /* transition-colors duration-200 ease-in-out */
-    text-decoration: none; /* Remove underline from links */
-    justify-content: center; /* Center text and icon */
-}
-
-.mobile-nav-link:hover {
-    color: #e5eb25; /* hover:text-blue-600 */
-}
-
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: #d4af37; /* Dark gold text */
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .mobile-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 215, 0, 0.05) 0%,
+      rgba(255, 215, 0, 0.3) 50%,
+      rgba(255, 215, 0, 0.05) 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .mobile-nav-link:hover::before {
+    left: 125%;
+  }
+  
+  .mobile-nav-link:hover {
+    background-color: #2a2a2a;
+    color: #ffd700; /* Brighter gold on hover */
+  }
+  
+  .mobile-nav-link.active {
+    background-color: #333;
+    color: #ffd700;
+  }
+  
 /* Media Queries for Responsiveness */
 @media (min-width: 1024px) { /* md breakpoint */
     .navbar-desktop-menu {

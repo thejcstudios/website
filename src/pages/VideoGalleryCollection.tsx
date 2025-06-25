@@ -82,13 +82,7 @@ function VideoGalleryCollection() {
     
 
       <div className="video-gallery-container">
-        {/* Header Buttons */}
-        <div className="header-buttons">
-          <a href="/" className="return-home-button">
-            Return
-          </a>
-          {/* The "Start Now" button has been removed */}
-        </div>
+     
 
         <h1 className="video-gallery-title">Our Video Gallery</h1>
 

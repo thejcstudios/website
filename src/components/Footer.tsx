@@ -11,11 +11,11 @@ function Footer() {
           </div>
   
           <ul className="site-footer-links" role="navigation" aria-labelledby="footer-links-heading">
-            <li><a href="/">Home</a></li>
+            <li><a href="/#">Home</a></li>
             <li><a href="/videos">Video Gallery</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="/#about">About</a></li>
             <li><a href="/images">Photo Gallery</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="/#services">Services</a></li>
           </ul>
   
           {/* 👇 Dev Credit with Facebook & Messenger icons */}

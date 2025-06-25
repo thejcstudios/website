@@ -44,11 +44,13 @@ function AboutUs() {
               onMouseLeave={() => setIsHovered1(false)}
             >
               {/* Main image */}
+              <div className="image-border-wrapper">
               <img
                 src="AboutImg1.webp"
                 alt="Description of main content 1"
                 className="my-app-image-main"
               />
+              </div>
               {/* Hover elements for the first image */}
              {/* Hover elements for the second image */}
              <div className={`my-app-hover-overlay ${isHovered1 ? 'is-hovered' : ''}`}>

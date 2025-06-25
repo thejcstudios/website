@@ -38,6 +38,7 @@ const LandingPage = () => {
 const VideoCollectionPageLayout = () => {
   return (
     <>
+    <div><Navbar1 /></div>
       <VideoGalleryCollection />
       {/* Removed <ImageGallery /> from here as requested */}
       <Footer /> {/* The Footer is now included here */}
@@ -49,6 +50,7 @@ const VideoCollectionPageLayout = () => {
 const ImageCollectionPageLayout = () => {
   return (
     <>
+    <div><Navbar1 /></div>
       <ImageGallery />
       <Footer />
     </>
