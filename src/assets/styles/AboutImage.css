@@ -1,0 +1,116 @@
+/* TeamOverlay.css */
+
+.team-overlay-section {
+    background-color: #1a1a1a; /* Deep charcoal base */
+    color: #d4af37; /* Dark gold for JC Studios vibe */
+    padding: 4rem 1rem;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .overlay-heading h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #fff9d1, #f0c75e, #e6b800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #e6b800; /* fallback for unsupported browsers */
+    text-align: center;
+  }
+  
+  
+  .overlay-heading p {
+    font-size: 1.125rem;
+    color: #cccccc;
+    margin-bottom: 3rem;
+  }
+  
+  .team-overlay-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+  
+  .team-overlay-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+  }
+  
+  .hotspot {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  
+  .popup {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid #d4af37;
+    padding: 1.2rem;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    opacity: 1;
+    transition: all 0.3s ease;
+    pointer-events: none; /* optional: prevent accidental hover */
+  }
+  
+  .popup h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(90deg, #fff9d1, #f0c75e, #e6b800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #e6b800; /* Fallback for unsupported browsers */
+  }
+  
+  .popup h4 {
+    margin-top: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f0c75e;
+  }
+  
+  .popup p {
+    font-size: 0.95rem;
+    color: #dddddd;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  @media (max-width: 768px) {
+    .overlay-heading h1 {
+      font-size: 2rem;
+    }
+  
+    .popup {
+      width: 200px;
+      padding: 1rem;
+    }
+  
+    .popup h2 {
+      font-size: 1rem;
+    }
+  
+    .popup p {
+      font-size: 0.9rem;
+    }
+  }
+  

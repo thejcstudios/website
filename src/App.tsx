@@ -9,6 +9,7 @@ import GallerySlider from './components/GallerySlider';
 import VideoList from './components/VideoList';
 import Feedback from './components/Feedback';
 import MessageUs from './components/MessageUs';
+import TeamOverlay from './components/AboutImage';
 import Footer from './components/Footer'; // Make sure Footer is imported
 import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
@@ -24,6 +25,7 @@ const LandingPage = () => {
       <div><Parralax /></div>
       <div><PhotoGallery /></div>
       <div><AboutUs /></div>
+      <div><TeamOverlay /></div>
       <div><Services /></div>
       <div><GallerySlider /></div>
       <div><VideoList /></div>
