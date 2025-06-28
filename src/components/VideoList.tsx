@@ -10,8 +10,9 @@ type GoogleDriveVideo = {
 };
 
 // Replace with your Google Drive Video Folder ID and API Key
-const VIDEO_FOLDER_ID = '1HyHaraR3pwPjhOWhA6CsmyBR_f9xJJk3'; // Your provided folder ID
-const API_KEY = 'AIzaSyALuh8edqL11s_ed3kauCVNFNdE65DLEmU';     // Your provided API Key
+const VIDEO_FOLDER_ID = import.meta.env.VITE_MAIN_VIDEO_FOLDER_ID;
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+
 
 const VideoList: React.FC = () => {
   const [videos, setVideos] = useState<GoogleDriveVideo[]>([]);

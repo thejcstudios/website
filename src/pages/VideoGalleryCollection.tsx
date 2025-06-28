@@ -9,8 +9,9 @@ type GoogleDriveVideo = {
 };
 
 // Replace with your Google Drive Video Folder ID and API Key
-const VIDEO_FOLDER_ID = '1epFoe6IYUnQpXDtkCdENkNN7Jk6HR8-m';
-const API_KEY = 'AIzaSyALuh8edqL11s_ed3kauCVNFNdE65DLEmU'; // Reusing API Key from previous context
+const VIDEO_FOLDER_ID = import.meta.env.VITE_VIDEO_FOLDER_ID;
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+
 
 function VideoGalleryCollection() {
   const [videos, setVideos] = useState<GoogleDriveVideo[]>([]);

@@ -9,8 +9,9 @@ type DriveGalleryImage = {
   category: 'Wedding' | 'Prenup' | 'Event' | 'Corporate' | 'Ads' | 'Other';
 };
 
-const FOLDER_ID = '1HerVKggSQ4-D2XdiPFvSNRswhyfyr0MF'; // Replace with your Drive folder ID
-const API_KEY = 'AIzaSyALuh8edqL11s_ed3kauCVNFNdE65DLEmU';     // Replace with your Google API key
+const FOLDER_ID = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
+const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+
 
 const DriveImageGallery: React.FC = () => {
   const [images, setImages] = useState<DriveGalleryImage[]>([]);
