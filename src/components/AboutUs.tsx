@@ -103,7 +103,7 @@ function AboutUs() {
               Professional photo and video services for business
             </h1>
             <p className={`my-app-p-right scroll-reveal ${vis3 ? "visible" : ""}`} ref={ref3}>
-            At JC STUDIO, we specialize in capturing the essence of every
+            At JC STUDIOS, we specialize in capturing the essence of every
               occasion—whether it's a corporate event, wedding, or private
               celebration. With a keen eye for detail and a passion for
               storytelling, we turn fleeting moments into timeless memories.

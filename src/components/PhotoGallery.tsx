@@ -11,8 +11,7 @@ function PhotoGallery() {
 
       <div className={`offer2 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
         <p>
-          Professional editing and event coverage to help your business stand out.
-          Get high-caliber visuals tailored to your needs.
+        We provide professional photo and video coverage designed to meet the demands of high-impact events. From corporate functions and brand launches to formal celebrations and conferences, our team delivers polished, results-driven visual content that reflects your brand’s standards and objectives. With a focus on reliability, efficiency, and visual excellence, we turn your key moments into compelling content that drives engagement and leaves a lasting impression.
         </p>
       </div>
 

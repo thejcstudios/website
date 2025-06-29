@@ -51,7 +51,7 @@ function GallerySlider() {
           ref={textRef}
           className={`base-template__text ${isTextVisible ? "visible" : ""}`}
         >
-          At JC Studio, we believe photography is more than just capturing images—
+          At JC Studios, we believe photography is more than just capturing images—
           it's about elevating each moment with style, emotion, and artistic flair. <br />
           Whether it's a grand wedding, a corporate milestone, or a creative editorial,
           our lens is focused on transforming ordinary moments into timeless visual stories. <br />
