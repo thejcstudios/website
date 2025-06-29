@@ -16,17 +16,14 @@
   background-color: rgb(74, 74, 74); /* bg-white */
   border-radius: 0.75rem; /* rounded-xl */
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
-  overflow: hidden; /* Keep overflow hidden for the main card */
+  overflow: visible; /* Keep overflow hidden for the main card */
   width: 90%;
   display: flex;
   flex-direction: column; /* flex-col */
-  transform: scale(1); /* Initial scale */
-  transition: all 500ms ease-in-out; /* transition-all duration-500 ease-in-out */
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
-.my-app-card:hover {
-  transform: scale(1.01); /* hover:scale-[1.01] */
-}
 
 @media (min-width: 1024px) { /* lg breakpoint */
   .my-app-card {
@@ -58,8 +55,10 @@
 
 .my-app-image-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 24rem; /* max-w-sm */
   border-radius: 0.5rem; /* rounded-lg */
   overflow: visible; /* Changed to visible to allow overlay to expand */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* shadow-lg */
@@ -70,7 +69,7 @@
 
 
 .my-app-image-main {
-  width: 100%;
+  width: clamp(.1rem, 60vw, 100rem);
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
@@ -126,12 +125,14 @@
   transition: all 300ms ease-in-out; /* transition-all duration-300 ease-in-out */
   width: 150%; /* Make it wider than parent */
   height: 150%; /* Make it taller than parent */
-  max-width: 450px; /* Max width to prevent it from becoming too large */
-  max-height: 450px; /* Max height */
+  max-width: clamp(.1rem, 30vw, 100rem); /* Max width to prevent it from becoming too large */
+  max-height: clamp(.1rem, 30vw, 100rem);; /* Max height */
   z-index: 10; /* Ensures it's on top of other content */
   box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Add a stronger shadow */
   border: 2px solid #DAA520; /* Accent border */
 }
+
+
 
 .my-app-hover-overlay.is-hovered {
   opacity: 1;
@@ -164,7 +165,21 @@
   margin-top: 1.5rem; /* mt-6 */
   margin-bottom: 0.75rem; /* mb-3 */
 }
+@media (max-width: 1024px) {
+  .my-app-hover-overlay {
+  max-width: clamp(.1rem, 50vw, 100rem); /* Max width to prevent it from becoming too large */
+  max-height: clamp(.1rem,70vw, 100rem);; /* Max height */
 
+  }
+  .my-app-hover-description {
+      color: #ffffff; /* text-white */
+      font-size: clamp(.1rem, 2vw, 20rem);
+      font-weight: 300; /* font-light */
+      text-align: center;
+      line-height: 1.5; /* Better readability */
+    }
+  
+}
 @media (min-width: 1024px) {
   .my-app-h1 {
     font-size: 2.25rem; /* lg:text-4xl */
