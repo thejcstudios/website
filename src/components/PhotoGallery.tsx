@@ -12,7 +12,7 @@ function PhotoGallery() {
       <div className={`offer2 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
         <p>
           Professional editing and event coverage to help your business stand out.
-          Get high-quality visuals tailored to your needs.
+          Get high-caliber visuals tailored to your needs.
         </p>
       </div>
 
