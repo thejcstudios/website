@@ -5,8 +5,8 @@ import GallerySlideItem from "./hooks/GallerySlideItem"; // Adjust the path as n
 function GallerySlider() {
   const slides = [
     {
-      prev: "https://i.imgur.com/4N7kDjE.jpeg", // landscape
-      next: "https://i.imgur.com/pXn2Dvc.jpeg", // square
+      prev: "https://i.imgur.com/fCfqHxa.jpeg", // landscape
+      next: "https://i.imgur.com/uNbh6Rr.jpeg", // square
       alt: "Gallery Slide - 1",
     },
     {
@@ -20,8 +20,8 @@ function GallerySlider() {
       alt: "Gallery Slide - 3",
     },
     {
-      prev: "https://i.imgur.com/jjzxCYx.jpeg",
-      next: "https://i.imgur.com/3AAbSnj.jpeg",
+      prev: "https://i.imgur.com/XCYgD5A.jpeg",
+      next: "https://i.imgur.com/7VePc2D.jpeg",
       alt: "Gallery Slide - 4",
     },
     {

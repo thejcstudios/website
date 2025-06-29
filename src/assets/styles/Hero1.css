@@ -1,0 +1,286 @@
+:root {
+    --bg-color-startup: #000a15;
+    --white: #f1f1f1;
+    --black: #0b0b0b;
+    --light-grey: #f9f9f9;
+    --darker: #151515;
+    --background-primary: #8e2ef7;
+    --background-secondary: #0b0b0b;
+    --background-tertiary: #0b0b0b;
+    --background-image: radial-gradient(
+        circle at 50% 50%,
+        var(--background-primary),
+        var(--background-secondary) 90%,
+        var(--background-tertiary) 50%
+    );
+}
+
+section.hero-startup {
+    position: relative;
+    height: 100vh;
+    background-color: var(--bg-color-startup);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  section.hero-startup::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('https://i.imgur.com/7PUDFYj.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    z-index: -1;
+  }
+  
+  
+
+section.hero-startup .hero-btn {
+    animation: hero-glow2 2s infinite;
+}
+
+section.hero-startup .hero-gradient {
+    background-image: linear-gradient(
+        180deg,
+        #4fe196 0%,
+        #63c2eb 35%,
+        #5bcfc8 70%,
+        #4fe196 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hero-gradientAnimation 5s ease infinite;
+}
+
+@keyframes hero-scrollUp {
+    0% {
+        transform: translateY(0) rotateY(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(-75px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+@keyframes hero-scrollDown {
+    0% {
+        transform: translateY(0) rotateY(90deg);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(75px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+
+
+.hero-scrolling-div-container-radial-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .hero-scrolling-div-container {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-scrolling-div-container-radial-cover {
+        display: none;
+    }
+    .hero-scrolling-div-container .hero-scrolling-div.hero-div1 {
+        display: none;
+    }
+    .hero-scrolling-div-container .hero-scrolling-div.hero-div4 {
+        display: none;
+    }
+}
+
+.hero-scrolling-div {
+    width: 100%;
+    height: auto;
+    background-color: #e0e0e0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    filter: grayscale(25%) sepia(100%) hue-rotate(90deg);
+}
+
+.hero-div1 {
+    background-color: rgba(24, 170, 192, 0.094);
+    background-size: center;
+    opacity: 0.5;
+    animation: hero-scrollUp 7s ease-in-out;
+}
+
+.hero-div2 {
+    background-color: rgba(78, 205, 197, 0.094);
+    animation: hero-scrollDown 7s ease-in-out;
+    background-size: cover;
+    opacity: 0.5;
+}
+.hero-div3 {
+    background-color: rgba(26, 83, 92, 0.094);
+    background-size: cover;
+    opacity: 0.5;
+    animation: hero-scrollUp 7s ease-in-out;
+}
+.hero-div4 {
+    background-color: rgba(0, 184, 147, 0.094);
+    animation: hero-scrollDown 7s ease-in-out;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+
+
+.hero-text-container {
+	margin: 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+    color: #fff;
+    z-index: 10;
+    width: 50%;
+    /* Align all text content to the start (left) */
+    text-align: flex-start; /* Corrected to 'left' for text alignment */
+}
+
+.hero-heading {
+	text-align: left;
+    font-size: clamp(.1rem, 3vw, 100rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    /* Gradient white for h1 */
+    background: linear-gradient(to right, #ffffff, #e5c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
+
+.hero-paragraph {
+	color: #cecdcd;
+    font-size: clamp(.1rem, 1vw, 100rem);
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+    .hero-text-container {
+        margin: 5% auto; /* Smaller top/bottom margin, auto left/right for centering */
+        width: 90%; /* Occupy more width on smaller screens */
+        align-items: center; /* Center content horizontally */
+        justify-content: center; /* Center content vertically */
+        text-align: center; /* Center text content */
+    }
+
+    /* Example of how to decrease text size for elements within the container
+       You would apply these styles to specific text elements (e.g., h1, p)
+       inside your .hero-text-container, not the container itself.
+       This is a suggestion as the original snippet only provided container styles.
+    */
+    .hero-text-container h1 {
+        font-size: 2em; /* Adjust as needed */
+    }
+
+    .hero-text-container p {
+        font-size: 1em; /* Adjust as needed */
+    }
+}
+
+/* Media query for even smaller mobile devices */
+@media (max-width: 480px) {
+    .hero-text-container {
+        margin: 3% auto;
+        width: 95%;
+    }
+
+    .hero-text-container h1 {
+        font-size: 1.5em; /* Further decrease font size for very small screens */
+    }
+
+    .hero-text-container p {
+        font-size: 0.9em; /* Further decrease font size for very small screens */
+    }
+}
+.my-app-button {
+    /* Basic Button Styling */
+    background-color: #000000; /* Black background */
+    color: #FFD700; /* Gold text */
+    padding: 1rem 2.5rem; /* Padding for size */
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 0.5rem; /* Rounded corners */
+    font-size: 1.25rem; /* Larger font size */
+    font-weight: 700; /* Bold text */
+    cursor: pointer;
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hides the sweep effect until it's active */
+    z-index: 1; /* Ensures button content is above sweep effect */
+    transition: color 0.3s ease-in-out; /* Smooth text color transition */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); /* Subtle gold shadow */
+    margin: 2%;
+
+    /* Link-specific styling for the <a> tag */
+    text-decoration: none; /* Remove underline from link */
+    display: inline-flex; /* Ensures padding and width work like a block element */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .my-app-button:hover {
+    color: #000000; /* Text color changes to black on hover */
+  }
+
+  .my-app-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(255, 215, 0, 0.6) 50%, /* Gold light sweep */
+      transparent 70%,
+      transparent 100%
+    );
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); /* Smooth sweep animation */
+    z-index: -1; /* Place behind button content */
+  }
+
+  .my-app-button:hover::before {
+    transform: translateX(0%); /* Sweep across to the right */
+  }
+
+  .hero-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }

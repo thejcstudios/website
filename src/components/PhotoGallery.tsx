@@ -47,7 +47,7 @@ function PhotoGallery() {
 
           <div className="card">
             <img
-              src="https://i.imgur.com/9EP4wCY.jpeg"
+              src="https://i.imgur.com/GCXCohl.jpeg"
               alt="Corporate"
               loading="lazy"
             />
@@ -60,7 +60,7 @@ function PhotoGallery() {
               alt="Ads"
               loading="lazy"
             />
-            <div className="card__head">Advertisment</div>
+            <div className="card__head">Ads</div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar1 from './components/Navbar';
-import HeroPage from './components/HeroPage';
+import Hero from './components/Hero';
 import PhotoGallery from './components/PhotoGallery';
 import Parralax from './components/Parralax';
 import AboutUs from './components/AboutUs';
@@ -21,7 +21,7 @@ const LandingPage = () => {
   return (
     <>
     <div><Navbar1 /></div>
-      <div><HeroPage /></div>
+      <div><Hero /></div>
       <div><Parralax /></div>
       <div><PhotoGallery /></div>
       <div><AboutUs /></div>

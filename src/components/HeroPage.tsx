@@ -121,14 +121,7 @@ const Hero: React.FC = () => {
                     <h1 className="hero-heading">We create the magical world of memories - Where your narratives live on.</h1>
                     
 <div className='hero-button'>
-        <a
-          href="https://m.me/thejcstudios" // <--- Replace with your desired URL
-          target="_blank" // Opens the link in a new tab
-          rel="noopener noreferrer" // Recommended for security when using target="_blank"
-          className="my-app-button"
-        >
-          Start Now
-        </a>
+     
         <a
           href="/videos" // <--- Replace with your desired URL
           className="my-app-button"
