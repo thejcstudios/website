@@ -10,7 +10,7 @@ type DriveGalleryImage = {
 };
 
 const FOLDER_ID = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
-const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const API_KEY = import.meta.env.VITE_GOOGLE_API;
 
 
 const DriveImageGallery: React.FC = () => {

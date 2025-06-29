@@ -10,7 +10,7 @@ type GoogleDriveVideo = {
 
 // Replace with your Google Drive Video Folder ID and API Key
 const VIDEO_FOLDER_ID = import.meta.env.VITE_VIDEO_FOLDER_ID;
-const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+const API_KEY = import.meta.env.VITE_GOOGLE_API;
 
 
 function VideoGalleryCollection() {
