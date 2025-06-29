@@ -152,7 +152,7 @@
 
 .my-app-hover-description {
   color: #ffffff; /* text-white */
-  font-size: clamp(.1rem, 1.2vw, 20rem);
+  font-size: clamp(.1rem, 1.2vw, 100rem);
   font-weight: 300; /* font-light */
   text-align: center;
   line-height: 1.5; /* Better readability */
@@ -173,7 +173,7 @@
   }
   .my-app-hover-description {
       color: #ffffff; /* text-white */
-      font-size: clamp(.1rem, 2vw, 20rem);
+      font-size: clamp(.1rem, 2vw, 100rem);
       font-weight: 300; /* font-light */
       text-align: center;
       line-height: 1.5; /* Better readability */
@@ -186,7 +186,7 @@
   }
   .my-app-hover-description {
     color: #ffffff; /* text-white */
-    font-size: clamp(.1rem, .6vw, 20rem);
+    font-size: clamp(.1rem, 1vw, 20rem);
     font-weight: 300; /* font-light */
     text-align: center;
     line-height: 1.5; /* Better readability */

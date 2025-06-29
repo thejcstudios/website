@@ -25,11 +25,6 @@ const Feedback: React.FC = () => {
       href: "https://www.facebook.com/thejcstudios/videos/603929162627156/"
     },
     {
-      id: 3,
-      type: "video",
-      href: "https://www.facebook.com/thejcstudios/videos/10069791539746027"
-    },
-    {
       id: 4,
       type: "video",
       href: "https://www.facebook.com/thejcstudios/videos/1347114696517539/"

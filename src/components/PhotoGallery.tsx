@@ -56,11 +56,11 @@ function PhotoGallery() {
 
           <div className="card">
             <img
-              src="https://i.imgur.com/wqNgv5B.jpeg"
+              src="https://i.imgur.com/d7FRN53.jpeg"
               alt="Ads"
               loading="lazy"
             />
-            <div className="card__head">Ads</div>
+            <div className="card__head">Advertisment</div>
           </div>
         </div>
       </div>

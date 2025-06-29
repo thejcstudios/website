@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="navbar-desktop-menu">
               <NavLink icon={<Home className="icon" />} text="Home" href="/#" />
               <NavLink icon={<Info className="icon" />} text="About Us" href="/#about" />
-              <NavLink icon={<Image className="icon" />} text="Photo Gallery" href="/images" />
+              <NavLink icon={<Image className="icon" />} text="Image Gallery" href="/images" />
               <NavLink icon={<Video className="icon" />} text="Video Gallery" href="/videos" />
               <NavLink icon={<Mail className="icon" />} text="Message Us" href="/#message" />
             </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
           <div className="navbar-mobile-menu-items">
             <MobileNavLink icon={<Home size={20} />} text="Home" href="/#" onClick={toggleMenu} />
             <MobileNavLink icon={<Info size={20} />} text="About Us" href="/#about" onClick={toggleMenu} />
-            <MobileNavLink icon={<Image size={20} />} text="Photo Gallery" href="/images" onClick={toggleMenu} />
+            <MobileNavLink icon={<Image size={20} />} text="Image Gallery" href="/images" onClick={toggleMenu} />
             <MobileNavLink icon={<Video size={20} />} text="Video Gallery" href="/videos" onClick={toggleMenu} />
             <MobileNavLink icon={<Mail size={20} />} text="Message Us" href="/#message" onClick={toggleMenu} />
           </div>

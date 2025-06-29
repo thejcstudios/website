@@ -60,7 +60,7 @@ function AboutUs() {
                   className="my-app-second-hover-image"
                 />
                 <p className="my-app-hover-description">
-                <strong>JC Cordero</strong>  is the creative mind and founder behind one of the most trusted photo and video service providers in the Philippines. With a deep passion for visual storytelling and years of hands-on experience in photography and cinematography.
+                <strong>JC Cordero</strong>  is the creative mind behind one of the most trusted photo and video service providers in the Philippines. With a deep passion for visual storytelling and years of hands-on experience in photography and cinematography.
                 </p>
               </div>
             </div>
@@ -82,19 +82,15 @@ function AboutUs() {
             >
               {/* Second main image */}
               <img
-                src="https://i.imgur.com/d8Geld0.jpeg"
+                src="https://i.imgur.com/B0mrM00.jpeg"
                 alt="Description of secondary content 2"
                 className="my-app-image-main"
               />
                 {/* Hover elements for the first image */}
                 <div className={`my-app-hover-overlay ${isHovered2 ? 'is-hovered' : ''}`}>
-                <img
-                  src="AboutImg2.webp"
-                  alt="Hover image 1"
-                  className="my-app-hover-image"
-                />
+                
                 <p className="my-app-hover-description">
-                  Rain Cordero is the heart behind the scenes — a passionate event coordinator and manager dedicated to making every celebration seamless, memorable, and truly special. As the lead organizer of the team, Rain brings a unique blend of creativity, calm under pressure, and meticulous attention to detail.
+                At JC Studios, we specialize in handling high-pressure, large-scale events with precision and artistry. Our team is composed of high caliber professionals, from lead directors and cinematographers to technical crew, who thrive in dynamic environments. Whether it’s a grand wedding, a corporate conference, or a multi-camera live production, we bring the experience, equipment, and creative edge needed to deliver flawless photo and video coverage. Trust JC Studios to capture the moments that matter—no matter how big the stage.
                 </p>
               </div>
              

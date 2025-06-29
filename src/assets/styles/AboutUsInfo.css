@@ -18,7 +18,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f0f0f0; /* Match body background */
+  background: linear-gradient(90deg, #ffffff, #e0e0e0, #bbbbbb);
+
 }
 
 .section-header {
@@ -70,14 +71,14 @@ body {
   height: 150px;
   border-radius: 50%; /* Make image perfectly round */
   overflow: hidden;
-  border: 4px solid #6366f1; /* Primary accent color border */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  border: 4px solid rgb(102, 102, 102); /* Primary accent color border */
+  box-shadow: 0 5px 15px rgba(112, 112, 112, 0.2); /* Soft shadow */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member-item:hover .member-image-wrapper {
-  border-color: #4f46e5; /* Darker primary on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  border-color: rgb(202, 172, 0); /* Darker primary on hover */
+  box-shadow: 0 8px 20px rgb(255, 224, 49); /* Stronger shadow on hover */
 }
 
 .member-image {
@@ -226,6 +227,13 @@ body {
     .member-info-popup::after {
         display: none; /* Hide the arrow when stacked */
     }
+    .team-member-item:hover .member-info-popup {
+        opacity: 1;
+        visibility: visible;
+        transform:  translateY(-5px); /* Slight lift animation */
+        pointer-events: auto; /* Enable clicks when visible */
+      }
+      
 }
 
 @media (max-width: 480px) {

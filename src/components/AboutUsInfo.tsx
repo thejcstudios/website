@@ -16,7 +16,7 @@ const TeamSection: React.FC = () => {
     {
       id: 'member1',
       name: 'JC ',
-      title: 'Creative Director',
+      title: 'Creative Director/Editor',
       imageUrl: 'https://i.imgur.com/YLJPbD9.jpeg',
       bio: 'I lead the vision and style of our photo and video projects, ensuring every frame tells a compelling story. My focus is on capturing emotion, detail, and cinematic quality in everything we produce.',
     },
@@ -25,21 +25,21 @@ const TeamSection: React.FC = () => {
       name: 'REYN',
       title: 'Film Maker',
       imageUrl: 'https://i.imgur.com/BtPFJmS.jpeg',
-      bio: 'Alexa is behind the lens capturing life’s best moments. Her experience spans weddings, events, and corporate shoots, delivering stunning visuals with professional storytelling.',
+      bio: 'Reyn handles the role of managing the team while spotting the important moment in a candid shooting style. Her multitasking expertise ensures the final output is extraordinary.',
     },
     {
       id: 'member3',
       name: 'MJ',
       title: 'Cinematographer',
       imageUrl: 'https://i.imgur.com/8nF8zC4.jpeg',
-      bio: 'Miguel specializes in portraits, engagements, and creative editorial shoots. He brings a blend of technical skill and artistic vision to every photo session.',
+      bio: 'We utilized MJ s expertise in power shots for our introductions. The film became more amazing and thrilling to watch because of his direction and ability to generate moments.',
     },
     {
       id: 'member4',
       name: 'KYLE',
       title: 'Lensman',
       imageUrl: 'https://i.imgur.com/MxCMw1d.jpeg',
-      bio: 'Sarah brings footage to life with seamless editing, color grading, and sound design. Her post-production expertise ensures polished and engaging final cuts.',
+      bio: 'Kyle recognizes the value of preserving every second, every feeling, and every aspect of your special day through his lens. His talent was enhanced by his tenacity.',
     },
    
   ];

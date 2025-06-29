@@ -6,7 +6,7 @@ type DriveGalleryImage = {
   id: string;
   imageUrl: string; // Direct link to the image
   title: string;    // Derived from file name or default
-  category: 'Wedding' | 'Prenup' | 'Event' | 'Corporate' | 'Ads' | 'Other';
+  category: 'Wedding' | 'Prenup' | 'Events' | 'Corporate' | 'Ads' | 'Other';
 };
 
 const FOLDER_ID = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
@@ -46,8 +46,8 @@ const DriveImageGallery: React.FC = () => {
             category = 'Wedding';
           } else if (lowerCaseName.includes('prenup') || lowerCaseName.includes('engagement')) {
             category = 'Prenup';
-          } else if (lowerCaseName.includes('event') || lowerCaseName.includes('party')) {
-            category = 'Event';
+          } else if (lowerCaseName.includes('events') || lowerCaseName.includes('party')) {
+            category = 'Events';
           } else if (lowerCaseName.includes('corporate') || lowerCaseName.includes('company') || lowerCaseName.includes('business')) {
             category = 'Corporate';
           } else if (lowerCaseName.includes('ad') || lowerCaseName.includes('commercial')) {
@@ -76,7 +76,7 @@ const DriveImageGallery: React.FC = () => {
   }, []);
 
   // Define available categories for buttons
-  const categories = ['All', 'Wedding', 'Prenup', 'Event', 'Corporate', 'Ads'];
+  const categories = ['All', 'Wedding', 'Prenup', 'Events', 'Corporate', 'Ads'];
 
   // Filter images based on the active category
   const filteredImages = images.filter(image =>

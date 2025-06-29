@@ -5,7 +5,7 @@ type GoogleDriveVideo = {
   id: string;
   googleDriveId: string;
   title: string;
-  category: 'Wedding' | 'Prenup' | 'Event' | 'Corporate' | 'Ads' | 'Other';
+  category: 'Wedding' | 'Prenup' | 'Events' | 'Corporate' | 'Ads' | 'Other';
 };
 
 // Replace with your Google Drive Video Folder ID and API Key
@@ -47,7 +47,7 @@ function VideoGalleryCollection() {
           } else if (lowerCaseName.includes('prenup') || lowerCaseName.includes('engagement')) {
             category = 'Prenup';
           } else if (lowerCaseName.includes('event') || lowerCaseName.includes('party')) {
-            category = 'Event';
+            category = 'Events';
           } else if (lowerCaseName.includes('corporate') || lowerCaseName.includes('business')) {
             category = 'Corporate';
           } else if (lowerCaseName.includes('ad') || lowerCaseName.includes('commercial')) {
@@ -75,7 +75,7 @@ function VideoGalleryCollection() {
     fetchVideos();
   }, []); // Re-run effect if FOLDER_ID or API_KEY change (though they are constants here)
 
-  const categories = ['All', 'Wedding', 'Prenup', 'Event', 'Corporate', 'Ads'];
+  const categories = ['All', 'Wedding', 'Prenup', 'Events', 'Corporate', 'Ads'];
   const filtered = videos.filter(video => activeCategory === 'All' || video.category === activeCategory);
 
   return (
