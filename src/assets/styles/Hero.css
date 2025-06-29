@@ -440,7 +440,7 @@ section.hero-startup .hero-gradient {
 
 .hero-heading {
 	text-align: left;
-    font-size: clamp(.1rem, 5vw, 100rem);
+    font-size: clamp(.1rem, 3vw, 100rem);
     font-weight: bold;
     margin-bottom: 20px;
     /* Gradient white for h1 */

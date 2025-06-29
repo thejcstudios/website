@@ -26,7 +26,7 @@ function MessageUs() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const recipientEmail = "ronnel.santos08@gmail.com"; // <--- IMPORTANT: Replace with your actual email address!
+    const recipientEmail = "info@thejcstudios.com"; // <--- IMPORTANT: Replace with your actual email address!
     const { name, email, phoneNumber, subject, message } = formData; // Destructure new field
 
     // Encode subject and body for URL to handle special characters

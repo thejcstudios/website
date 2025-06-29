@@ -38,7 +38,7 @@ function PhotoGallery() {
 
           <div className="card">
             <img
-              src="https://i.imgur.com/RHEQ1X9.jpeg"
+              src="https://i.imgur.com/7AtQC6L.jpeg"
               alt="Events"
               loading="lazy"
             />

@@ -38,6 +38,11 @@ const Feedback: React.FC = () => {
       id: 5,
       type: "video",
       href: "https://www.facebook.com/thejcstudios/videos/1887870024879986"
+    },
+    {
+      id: 6,
+      type: "post",
+      href: "https://www.facebook.com/thejcstudios/posts/pfbid0B7cJPvPjteP2s2wbZXacyjEk6V2jKwZ7sTGtYttch4PY8KU2fFBWkPo7ErQsfbEel"
     }
   ];
 

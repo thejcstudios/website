@@ -55,12 +55,12 @@ function AboutUs() {
              {/* Hover elements for the second image */}
              <div className={`my-app-hover-overlay ${isHovered1 ? 'is-hovered' : ''}`}>
                 <img
-                  src="AboutImg2.webp"
+                  src="https://i.imgur.com/mD8MiYy.jpeg"
                   alt="Hover image 2"
                   className="my-app-second-hover-image"
                 />
                 <p className="my-app-hover-description">
-                  Rain Cordero is the heart behind the scenes — a passionate event coordinator and manager dedicated to making every celebration seamless, memorable, and truly special. As the lead organizer of the team, Rain brings a unique blend of creativity, calm under pressure, and meticulous attention to detail.
+                <strong>JC Cordero</strong>  is the creative mind and founder behind one of the most trusted photo and video service providers in the Philippines. With a deep passion for visual storytelling and years of hands-on experience in photography and cinematography.
                 </p>
               </div>
             </div>
@@ -89,12 +89,12 @@ function AboutUs() {
                 {/* Hover elements for the first image */}
                 <div className={`my-app-hover-overlay ${isHovered2 ? 'is-hovered' : ''}`}>
                 <img
-                  src="https://i.imgur.com/mD8MiYy.jpeg"
+                  src="AboutImg2.webp"
                   alt="Hover image 1"
                   className="my-app-hover-image"
                 />
                 <p className="my-app-hover-description">
-                  <strong>JC Cordero</strong> is the creative mind and founder behind one of the most trusted photo and video service providers in the Philippines. With a deep passion for visual storytelling and years of hands-on experience in photography and cinematography.
+                  Rain Cordero is the heart behind the scenes — a passionate event coordinator and manager dedicated to making every celebration seamless, memorable, and truly special. As the lead organizer of the team, Rain brings a unique blend of creativity, calm under pressure, and meticulous attention to detail.
                 </p>
               </div>
              
