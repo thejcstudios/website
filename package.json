@@ -29,6 +29,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
     "react-spinners": "^0.17.0",
+    "rellax": "^1.12.1",
     "swiper": "^11.2.8",
     "tabletop": "^1.6.3",
     "tailwind-merge": "^3.3.0"

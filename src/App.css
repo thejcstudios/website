@@ -9,12 +9,22 @@ section[id] {
 
 
 html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden !important;
-  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
   font-family: 'Playfair Display', Georgia, serif;
+  background-color: #fdfdfd; /* Soft neutral background */
+  color: #222; /* Clean, readable text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  font-size: 16px; /* Base font size for responsiveness */
+  box-sizing: border-box;
 }
+
 
 h1, h2, h3, .boxcontainer h1, .AboutUs h1, .AboutUs h2, .section-header h3 {
   position: relative;
@@ -99,48 +109,53 @@ p, .AboutUs p, .servicescontainer p {
 
 /*parallax*/
 
-
-.parralaxcontainer {
-  position: relative;
+.parallax-container {
   background-color: black;
-  width: 100%;
-  max-height: 40vh;
-  background-image: url("./assets/Front-Photo.jpg");
-  background-position: center  center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-.parallax-title {
-  display: flex;
-  flex-wrap: nowrap;
-  font-family: 'Impact', 'Anton', sans-serif;
-  font-size: clamp(.1rem, 22vw, 100rem);
-  width: 100%;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: clamp(.1rem, .1vw, 100rem) white;
-  text-transform: uppercase;
-  letter-spacing: -0.00em;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  transition: -webkit-text-stroke-color 0.4s ease, text-shadow 0.4s ease;
-  cursor: default;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; /* adds ... when overflowed */
 }
 
-.parallax-title:hover {
-  /* Change stroke color to gold */
-  -webkit-text-stroke-color: #FFD700;
-  /* Add a gold glow on the outline */
+/* Background image as a movable element */
+.parallax-bg {
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* slightly larger for better scroll effect */
+  background-image: url('./assets/Front-Photo.jpg'); /* adjust path if needed */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Foreground text */
+.parallax-text {
+  position: relative;
+  z-index: 2;
+  color: transparent;
+  font-family: 'Impact', 'Anton', sans-serif;
+  font-size: clamp(.1rem, 20vw, 100rem);
+  font-weight: 900;
+  -webkit-text-stroke: 1px white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* Remove this ↓ */
+  /* pointer-events: none; */
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+
+
+.parallax-text:hover {
+  -webkit-text-stroke-color: gold;
 }
 
 
@@ -252,10 +267,10 @@ p, .AboutUs p, .servicescontainer p {
     gap: 0px;
     padding: 40px 50px;
   }
-  .parralaxcontainer {
+  .parallax-container {
     height: 15vh;
   }
-  .parallax-title {
+  .parallax-text {
  
     -webkit-text-stroke: 1px white; /* thicker stroke */
   }
