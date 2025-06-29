@@ -123,7 +123,7 @@ p, .AboutUs p, .servicescontainer p {
   width: 100%;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: clamp(.1rem, .1vw, 100rem) black;
+  -webkit-text-stroke: clamp(.1rem, .1vw, 100rem) white;
   text-transform: uppercase;
   letter-spacing: -0.00em;
   text-align: center;
@@ -257,7 +257,7 @@ p, .AboutUs p, .servicescontainer p {
   }
   .parallax-title {
  
-    -webkit-text-stroke: 1px black; /* thicker stroke */
+    -webkit-text-stroke: 1px white; /* thicker stroke */
   }
   
 

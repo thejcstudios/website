@@ -20,10 +20,36 @@ function Footer() {
   
           {/* 👇 Dev Credit with Facebook & Messenger icons */}
           <div className="site-footer-dev">
-            Site developed by: Ronnel Santos
-            <a href="https://www.facebook.com/ronnel.santos08" aria-label="Facebook" className="dev-icon"><i className="fa-brands fa-facebook"></i></a>
-            <a href="https://m.me/ronnel.santos08" aria-label="Messenger" className="dev-icon"><i className="fa-brands fa-facebook-messenger"></i></a>
-          </div>
+  Site developed by: Ronnel Santos
+  <a
+    href="https://www.facebook.com/ronnel.santos08"
+    aria-label="Facebook"
+    className="dev-icon"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fa-brands fa-facebook"></i>
+  </a>
+  <a
+    href="https://m.me/ronnel.santos08"
+    aria-label="Messenger"
+    className="dev-icon"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fa-brands fa-facebook-messenger"></i>
+  </a>
+  <a
+    href="https://ronnelsantos.onrender.com"
+    aria-label="Website"
+    className="dev-icon"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i className="fa-solid fa-globe"></i>
+  </a>
+</div>
+
   
           <p className="site-footer-copyright">
             © {new Date().getFullYear()} <a>JC STUDIOS</a>. All rights reserved.
