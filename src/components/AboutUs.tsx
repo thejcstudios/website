@@ -1,6 +1,6 @@
 import { useInView } from "./hooks/useInView";
 import { useState } from 'react';
-import '../assets/styles/About.css'
+import '../assets/styles/About.css';
 
 // Define the type for Vimeo videos
 type VimeoVideo = {

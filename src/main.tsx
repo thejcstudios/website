@@ -8,7 +8,7 @@ import './App.css'
 import './assets/styles/Gallery.scss'
 import "./assets/styles/GallerySlider.css";
 import './assets/styles/Feeedback.css'
-import './assets/styles/footer.css'
+import './assets/styles/Footer.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
