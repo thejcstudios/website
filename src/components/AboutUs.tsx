@@ -69,9 +69,7 @@ function AboutUs() {
             Innovate. Collaborate. Elevate.
             </h1>
             <p className={`my-app-p scroll-reveal2 ${vis4 ? "visible" : ""}`} ref={ref4}>
-              Our team provides expert editing and event coverage to help your
-              business stand out. We offer reliable solutions tailored to your
-              project, ensuring high-quality results every time.
+              Our team provides expert editing and coverage to help your event stand out. We offer reliable solutions tailored to your project, ensuring high-quality results every time.
             </p>
 
             {/* Container for the second image with hover effect */}
