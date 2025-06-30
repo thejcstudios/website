@@ -17,6 +17,17 @@ function Footer() {
             <li><a href="/images">Photo Gallery</a></li>
             <li><a href="/#services">Services</a></li>
           </ul>
+          <div className="site-footer-contact">
+  <p>
+    <i className="fa-solid fa-phone" style={{ marginRight: "8px" }}></i>
+    <a href="tel:+639649812664">+63 964 981 2664</a>
+  </p>
+  <p>
+    <i className="fa-solid fa-envelope" style={{ marginRight: "8px" }}></i>
+    <a href="mailto:thejcstudios@gmail.com">info@thejcstudios.com</a>
+  </p>
+</div>
+        
   
           {/* 👇 Dev Credit with Facebook & Messenger icons */}
           <div className="site-footer-dev">
