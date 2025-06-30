@@ -19,7 +19,7 @@ function PhotoGallery() {
         <div className="photocontainer">
           <div className="card">
             <img
-              src="https://i.imgur.com/0d4YHhN.jpeg"
+              src="https://i.imgur.com/d7FRN53.jpeg"
               alt="Weddings"
               loading="lazy"
             />
@@ -28,7 +28,7 @@ function PhotoGallery() {
 
           <div className="card">
             <img
-              src="https://i.imgur.com/bF4TvXx.jpeg"
+              src="https://i.imgur.com/AVLvvZq.jpeg"
               alt="Prenup"
               loading="lazy"
             />
@@ -55,7 +55,7 @@ function PhotoGallery() {
 
           <div className="card">
             <img
-              src="https://i.imgur.com/d7FRN53.jpeg"
+              src="https://i.imgur.com/vNLn6Wb.jpeg"
               alt="Ads"
               loading="lazy"
             />
