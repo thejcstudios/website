@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           {/* Column 1 */}
           <div className="footer-column">
             <h3>The Jc Studios</h3>
-            <p>Full-service photo and video studio specializing in events, corporate shoots, and creative content. We’re dedicated to capturing your most important moments with clarity, style, and emotion.</p>
+            <p>Full-service photo and video studio specializing in events, corporate shoots, and creative content. We’re dedicated to capturing your most important moments with clarity, style, and emotion..</p>
             <div className="social-links">
               <a href="https://www.facebook.com/thejcstudios" className="social-link" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
               <a href="#" className="social-link" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
