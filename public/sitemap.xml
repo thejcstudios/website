@@ -6,19 +6,9 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.thejcstudios.com/#about</loc>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://www.thejcstudios.com/images</loc>
   </url>
   <url>
     <loc>https://www.thejcstudios.com/videos</loc>
-  </url>
-  <url>
-    <loc>https://www.thejcstudios.com/#message</loc>
-  </url>
-    <url>
-    <loc>https://www.thejcstudios.com/#message</loc>
   </url>
 </urlset>
