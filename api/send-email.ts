@@ -16,16 +16,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const transporter = nodemailer.createTransport({
       host: 'smtpout.secureserver.net',
       port: 465,
-      secure: true, // SSL
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER, // your full email address
-        pass: process.env.EMAIL_PASS, // your email password or app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
+    // 1. Send the message to yourself
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,    // from the website user
-      to: process.env.EMAIL_TO,        // your email address (recipient)
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_TO,
       subject,
       html: `
         <h3>New message from website contact form</h3>
@@ -33,6 +34,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phoneNumber || 'N/A'}</p>
         <p><strong>Message:</strong><br>${message}</p>
+      `,
+    });
+
+    // 2. Send auto-reply to user
+    await transporter.sendMail({
+      from: `"The JC Studios" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: 'We received your message',
+      html: `
+        <p>Hi ${name},</p>
+        <p>Thank you for contacting <strong>The JC Studios</strong>.</p>
+        <p>We’ve received your message:</p>
+        <blockquote style="border-left: 4px solid #ccc; padding-left: 10px; color: #555;">
+          ${message}
+        </blockquote>
+        <p>Our team will get back to you shortly.</p>
+        <br/>
+        <p>Warm regards,<br/>The JC Studios Team</p>
+        <p style="font-size: 0.8rem; color: #888;">This is an automated response. Please do not reply directly to this email.</p>
       `,
     });
 

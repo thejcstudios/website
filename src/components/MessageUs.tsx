@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/styles/MessageUs.css'
+import '../assets/styles/MessageUs.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,8 +9,11 @@ function MessageUs() {
     email: '',
     phoneNumber: '',
     subject: '',
-    message: ''
+    message: '',
+    company: '' // Honeypot field
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,23 +26,34 @@ function MessageUs() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Honeypot check
+    if (formData.company.trim() !== '') {
+      toast.warn('Suspicious submission detected. Please try again later.');
+      return;
+    }
+
+    const { company, ...cleanData } = formData;
+
+    setLoading(true);
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(cleanData),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        toast.success(' Your message has been sent. We’ll get back to you shortly.');
-        setFormData({ name: '', email: '', phoneNumber: '', subject: '', message: '' });
+        toast.success('Thank you for your message. We’ll get back to you shortly.');
+        setFormData({ name: '', email: '', phoneNumber: '', subject: '', message: '', company: '' });
       } else {
-        toast.error(` Failed to send message: ${result.error || 'Please try again later.'}`);
+        toast.error(`Failed to send message: ${result.error || 'Please try again later.'}`);
       }
-    } catch (error) {
-      toast.error(' Network error. Please check your connection and try again.');
+    } catch {
+      toast.error('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -118,16 +132,30 @@ function MessageUs() {
               ></textarea>
             </div>
 
-            <button type="submit" className="my-app-form-button">Send Message</button>
+            {/* Honeypot field (hidden) */}
+            <div style={{ display: 'none' }}>
+              <label htmlFor="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                autoComplete="off"
+                tabIndex={-1}
+              />
+            </div>
+
+            <button type="submit" className="my-app-form-button" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Message'}
+            </button>
           </form>
         </div>
       </div>
 
-      {/* Toast container for notifications */}
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} closeOnClick />
     </section>
   );
 }
 
 export default MessageUs;
-
