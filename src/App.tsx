@@ -14,6 +14,7 @@ import { Dashboard } from './pages/Dashboard';
 import Login1 from './pages/Login';
 import VideoGalleryCollection from './pages/VideoGalleryCollection';
 import ImageGallery from './pages/ImageGalleryCollection';
+import Invitation from './pages/Invitation';
 import TeamSection from './components/AboutUsInfo';
 
 // Landing page layout as a separate component
@@ -58,7 +59,16 @@ const ImageCollectionPageLayout = () => {
     </>
   );
 };
-
+// New component to encapsulate ImageGallery and Footer
+const InvitaionCollectionPageLayout = () => {
+  return (
+    <>
+    <div><Navbar1 /></div>
+      <Invitation />
+      <Footer />
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -71,6 +81,7 @@ const App = () => {
         <Route path="/videos" element={<VideoCollectionPageLayout />} />
         {/* Use the new ImageCollectionPageLayout component for the /images route */}
         <Route path="/images" element={<ImageCollectionPageLayout />} />
+        <Route path="/invitation" element={<InvitaionCollectionPageLayout />} />
       </Routes>
     </Router>
   );

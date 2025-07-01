@@ -50,6 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           ${message}
         </blockquote>
         <p>Our team will get back to you shortly.</p>
+        <p>For quicker assistance, feel free to reach out at +639950371821.</p>
         <br/>
         <p>Warm regards,<br/>The JC Studios Team</p>
         <p style="font-size: 0.8rem; color: #888;">This is an automated response. Please do not reply directly to this email.</p>

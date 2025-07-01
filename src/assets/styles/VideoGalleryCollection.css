@@ -81,6 +81,9 @@ body {
 }
 
 .video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #1c1c1c; /* Slightly lighter black for item background, adds depth */
   border-radius: 0.8rem; /* Slightly more rounded corners */
   overflow: hidden;
@@ -281,4 +284,30 @@ body {
     .return-home-button {
         width: 80%;
     }
+}
+
+.video-item-link {
+  color: #FFD700;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  right: 1rem;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 0; /* margin removed because positioned absolutely */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-item-link:hover,
+.video-item-link:focus {
+  color: #ffffff; /* Lighter blue on hover/focus */
+  text-decoration: underline;
+  outline: none;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, Info, Image, Video, Mail } from 'lucide-react'; // Importing icons from lucide-react
+import { Menu, X, Home, Info, Image, Video, Mail, Gift } from 'lucide-react'; // Importing icons from lucide-react
 import '../assets/styles/Navbar.css'
 
 const Navbar = () => {
@@ -39,6 +39,7 @@ const Navbar = () => {
               <NavLink icon={<Info className="icon" />} text="About Us" href="/#about" />
               <NavLink icon={<Image className="icon" />} text="Image Gallery" href="/images" />
               <NavLink icon={<Video className="icon" />} text="Video Gallery" href="/videos" />
+              <NavLink icon={<Gift className="icon" />} text="Website Invitation" href="/invitation" />
               <NavLink icon={<Mail className="icon" />} text="Message Us" href="/#message" />
             </div>
 
@@ -63,6 +64,7 @@ const Navbar = () => {
             <MobileNavLink icon={<Info size={20} />} text="About Us" href="/#about" onClick={toggleMenu} />
             <MobileNavLink icon={<Image size={20} />} text="Image Gallery" href="/images" onClick={toggleMenu} />
             <MobileNavLink icon={<Video size={20} />} text="Video Gallery" href="/videos" onClick={toggleMenu} />
+            <MobileNavLink icon={<Gift size={20} />} text="Website Invitation" href="/invitation" onClick={toggleMenu} />
             <MobileNavLink icon={<Mail size={20} />} text="Message Us" href="/#message" onClick={toggleMenu} />
           </div>
         </div>
