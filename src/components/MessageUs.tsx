@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../assets/styles/MessageUs.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../assets/styles/MessageUs.css';
 
 function MessageUs() {
   const [formData, setFormData] = useState({
