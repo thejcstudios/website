@@ -15,6 +15,16 @@ const Feedback: React.FC = () => {
 
   const posts: FacebookPost[] = [
     {
+      id: 3,
+      type: "post",
+      href: "https://www.facebook.com/thejcstudios/posts/pfbid0h8kJkm3vQgNs79RSybmtk4ZFQj3drmgnAtPbcfiz22xMfphtGMwdoYXPRSHBo2qZl"
+    },
+    {
+      id: 6,
+      type: "post",
+      href: "https://www.facebook.com/thejcstudios/posts/pfbid0B7cJPvPjteP2s2wbZXacyjEk6V2jKwZ7sTGtYttch4PY8KU2fFBWkPo7ErQsfbEel"
+    },
+    {
       id: 1,
       type: "post",
       href: "https://www.facebook.com/thejcstudios/posts/pfbid02JeKiEENV7Ct1Py8J8LQr1REhKn2Kc5jPvfYJPiZE2tyPJh6NGAxxvGYXGZaPZFh4l"
@@ -33,12 +43,8 @@ const Feedback: React.FC = () => {
       id: 5,
       type: "video",
       href: "https://www.facebook.com/thejcstudios/videos/1887870024879986"
-    },
-    {
-      id: 6,
-      type: "post",
-      href: "https://www.facebook.com/thejcstudios/posts/pfbid0B7cJPvPjteP2s2wbZXacyjEk6V2jKwZ7sTGtYttch4PY8KU2fFBWkPo7ErQsfbEel"
     }
+  
   ];
 
   return (
