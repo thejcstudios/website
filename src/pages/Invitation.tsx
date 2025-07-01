@@ -52,7 +52,7 @@ function Invitation() {
             slug = match[1];
           }
 
-          const siteUrl = slug ? `https://${slug}.onrender.com` : undefined;
+          const siteUrl = slug ? `https://${slug}.thejcstudios.com` : undefined;
 
           return {
             id: file.id,
