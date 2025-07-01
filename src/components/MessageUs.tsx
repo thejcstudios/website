@@ -146,7 +146,7 @@ function MessageUs() {
               />
             </div>
 
-            <button type="submit" className="my-app-form-button" disabled={loading}>
+            <button type="submit" className="my-app-button" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
             </button>
           </form>
