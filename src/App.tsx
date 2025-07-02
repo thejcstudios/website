@@ -26,9 +26,9 @@ const LandingPage = () => {
       <div><Parralax /></div>
       <div><PhotoGallery /></div>
       <div><AboutUs /></div>
-      <div><TeamSection /></div>
       <div><Services /></div>
       <div><GallerySlider /></div>
+      <div><TeamSection /></div>
       <div><VideoList /></div>
       <div><Feedback /></div>
       <div><MessageUs /></div>

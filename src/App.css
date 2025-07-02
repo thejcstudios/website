@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
 
 html {
   scroll-behavior: smooth;
@@ -14,8 +17,9 @@ html, body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  font-family: 'Playfair Display', Georgia, serif;
-  background-color: #fdfdfd; /* Soft neutral background */
+  font-family: 'Funnel Display', sans-serif;
+  font-weight: 100;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0, #bbbbbb);
   color: #222; /* Clean, readable text */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,23 +30,28 @@ html, body {
 }
 
 
-h1, h2, h3, .boxcontainer h1, .AboutUs h1, .AboutUs h2, .section-header h3 {
+h1, h2, h3,
+.boxcontainer h1,
+.AboutUs h1,
+.AboutUs h2,
+.section-header h3 {
+  font-size: clamp(.1rem, 2.5vw, 100rem);
   position: relative;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-family: 'Funnel Display', sans-serif;
+  font-weight: 800;
   color: #222;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
+
 .my-app-button {
   /* Basic Button Styling */
   background-color: rgba(0, 0, 0, 0.346); /* Black background */
   color: #FFD700; /* Gold text */
-  padding: 1rem 2.5rem; /* Padding for size */
   border: 2px solid #FFD700; /* Gold border */
   border-radius: 0.5rem; /* Rounded corners */
-  font-size: 1.25rem; /* Larger font size */
+  font-size: clamp(1rem, 1vw, 100rem); /* Larger font size */
   font-weight: 700; /* Bold text */
   cursor: pointer;
   position: relative; /* Needed for pseudo-element positioning */
@@ -74,20 +83,33 @@ h1::after, h2::after, h3::after,
 
 /* Optional subtle line above paragraph text */
 p, .AboutUs p, .servicescontainer p {
-  font-family: 'Lora', Georgia, serif;
-  font-weight: 400;
-  color: #333;
+  font-family: 'Funnel Display', sans-serif;
+  font-size: clamp(.1rem, 1.1vw, 100rem);
+  font-weight: 200;
+  color: #4b4b4b;
   position: relative;
   padding-top: 0.5rem;
   margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  p{
+    font-size: clamp(.1rem, 3vw, 100rem);
+  }
+  h1, h2, h3,
+.boxcontainer h1,
+.AboutUs h1,
+.AboutUs h2,
+.section-header h3 {
+  font-size: clamp(.1rem, 6vw, 100rem);
+}
 }
 
 
 
 /* If you want lines on smaller headings inside sections */
 .section-header h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-weight: 100;
   color: #413e66;
   padding-bottom: 0.7rem;
   margin-bottom: 1rem;
@@ -168,8 +190,6 @@ p, .AboutUs p, .servicescontainer p {
   text-align: center;
   color: black;
   width: 100%;
-  font-size: 3rem;
-  font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
 
@@ -346,7 +366,7 @@ p, .AboutUs p, .servicescontainer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1320px;
+  max-width: 80%;
 }
 section {
   overflow: hidden;
@@ -357,7 +377,6 @@ section {
 }
 
 .section-header h3 {
-  font-size: 36px;
   color: #413e66;
   text-align: center;
   position: relative;
@@ -367,15 +386,27 @@ section {
 .servicescontainer p {
   text-align: center;
   margin: auto;
-  width: 80%;
-  font-size: 15px;
+  width: 100%;
   color: #535074;
 }
+
+
 
 @media (max-width: 100%) {
   .section-header p {
     width: 100%;
   }
+ 
+}
+@media screen and (max-width: 1024px) {
+
+  .servicescontainer p {
+    font-size: clamp(.1rem, 3vw, 100rem);
+    margin-bottom: 10%;
+  }
+  
+  
+
 }
 
 #services {
@@ -413,15 +444,12 @@ section {
   height: 60px;
 }
 
-#services .icon .service-icon {
-  font-size: 36px;
-  line-height: 1;
-}
+
 
 #services .title {
-  font-weight: 700;
+  font-weight: 300;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: clamp(.1rem, 1.2vw, 100rem);
 }
 
 #services .title a {
@@ -435,8 +463,8 @@ section {
   text-decoration: none;
 }
 #services .description {
-  font-size: 14px;
-  line-height: 28px;
+  font-size: clamp(.1rem, .7vw, 100rem);
+  line-height: 1.6;
   margin-bottom: 0;
   text-align: left;
 }

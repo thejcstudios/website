@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   padding-bottom: 10px;
-  background: #FFFAF0;
+  background: linear-gradient(90deg, #ffffff, #e0e0e0, #bbbbbb);
 }
 
 .scroll-reveal7 {
@@ -70,7 +70,7 @@ text-align: center; /* center the text inside */
         position: absolute;
         bottom: 0;
         left: 0;
-        font-size: 1em;
+        font-size: 1rem;
         white-space: nowrap;
       }
   
@@ -84,7 +84,7 @@ text-align: center; /* center the text inside */
           top: calc(100% - 2em);
           color: white;
           background: rgba(0, 0, 0, 0.5);
-          font-size: 2em;
+          font-size: 2rem;
           transform: rotate(0deg) skew(-5deg);
         }
       }

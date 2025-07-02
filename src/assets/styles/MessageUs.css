@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
 }
 
-.my-app-container {
+.my-app-container1 {
   min-height: 100vh;
   background-color: #1a1a1a; /* Darker background for black theme */
   display: flex;
@@ -16,7 +16,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  font-family: 'Inter', sans-serif;
 }
 
 /* Contact Form Styles */

@@ -10,9 +10,7 @@ function PhotoGallery() {
       </div>
 
       <div className={`offer2 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>
-        <p>
-        We provide professional photo and video coverage designed to meet the demands of high-impact events. From corporate functions and brand launches to formal celebrations and conferences, our team delivers polished results that reflects your brand’s standards and objectives. With a focus on reliability, efficiency, and excellence, we turn your key moments into compelling visual that drives engagement and leaves a lasting impression.
-        </p>
+  
       </div>
 
       <div className={`scroll-reveal7 ${isAboutVisible ? "visible" : ""}`} ref={aboutRef}>

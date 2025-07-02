@@ -59,7 +59,7 @@ function MessageUs() {
 
   return (
     <section id="message">
-      <div className="my-app-container">
+      <div className="my-app-container1">
         <div className="my-app-contact-section">
           <h2>Message Us</h2>
 

@@ -52,9 +52,9 @@ function GallerySlider() {
           className={`base-template__text ${isTextVisible ? "visible" : ""}`}
         >
           At JC Studios, we believe photography is more than just capturing images—
-          it's about elevating each moment with style, emotion, and artistic flair. <br />
+          it's about elevating each moment with style, emotion, and artistic flair.
           Whether it's a grand wedding, a corporate milestone, or a creative editorial,
-          our lens is focused on transforming ordinary moments into timeless visual stories. <br />
+          our lens is focused on transforming ordinary moments into timeless visual stories.
           We blend elegance with authenticity, ensuring every frame reflects the essence
           of your occasion while maintaining a distinct, stylish touch. Let us help you tell
           your story—beautifully, boldly, and beyond expectation.

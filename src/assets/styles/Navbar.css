@@ -20,8 +20,6 @@
     margin-right: auto;
     padding-left: 3%; /* px-4 */
     padding-right: 3%; /* px-4 */
-    padding-top: 0.75rem; /* py-3 */
-    padding-bottom: 0.75rem; /* py-3 */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +32,7 @@
 .navbar-logo-group {
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* space-x-3 */
+    gap: clamp(.1rem, 1vw, 100rem); /* space-x-3 */
 }
 
 .navbar-logo {
@@ -45,9 +43,10 @@
 }
 
 .navbar-name {
+  font-family: 'Funnel Display', sans-serif;
     font-size: clamp(.1rem, 1vw, 100rem); /* text-xl */
-    font-weight: 700; /* font-bold */
-    color: #ffffff; /* text-gray-800 */
+    font-weight: 600; /* font-bold */
+    color: rgb(210, 210, 210); /* text-gray-800 */
     letter-spacing: 0.025em; /* tracking-wide */
 }
 
@@ -55,17 +54,14 @@
 @media (max-width: 1024px) { /* md breakpoint */
   
 .navbar-logo {
-  width: clamp(.1rem, 8vw, 100rem); /* w-10 */
-  height: clamp(.1rem, 8vw, 100rem); /* h-10 */
+  width: clamp(.1rem, 6vw, 100rem); /* w-10 */
+  height: clamp(.1rem, 6vw, 100rem); /* h-10 */
   border-radius: 9999px; /* rounded-full */
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md */
 }
 
 .navbar-name {
-  font-size: clamp(.1rem, 5vw, 100rem); /* text-xl */
-  font-weight: 700; /* font-bold */
-  color: #ffffff; /* text-gray-800 */
-  letter-spacing: 0.025em; /* tracking-wide */
+  font-size: clamp(.1rem, 3vw, 100rem); /* text-xl */
 }
 }
 
@@ -135,7 +131,7 @@
     align-items: center;
     gap: clamp(.1rem, .4vw, 100rem);
     color: #d2d2d3;
-    font-weight: 500;
+    font-weight: 100;
     font-size: clamp(.1rem, 1vw, 100rem);
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
     padding: 0.5rem 0.75rem;
@@ -175,8 +171,8 @@
     gap: 0.5rem;
     width: 100%;
     padding: 0.75rem 1rem;
-    color: #d4af37; /* Dark gold text */
-    font-weight: 500;
+    color: #ffffff; /* Dark gold text */
+    font-weight: 100;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 4px;

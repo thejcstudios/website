@@ -186,6 +186,7 @@
 	.gallery-slider__slide.active .gallery-slider__img-next {
 		width: 300px;
 	}
+	
 }
 
 @media (max-width: 768px) {
@@ -232,10 +233,10 @@
     z-index: 1;
     position: relative;
     height: 100%;
-    background: black;
+    background: #1a1a1a;
 }
 .base-template__title {
-    color: white;
+    color: #b5b5b5;
     text-align: center;
     margin-top: 5%;
     margin-left: 20%;
@@ -243,10 +244,19 @@
 }
 
 .base-template__text {
-    color: white;
-    text-align: center;
+	font-size: clamp(.1rem, 1.1vw, 100rem);
+    color: #b5b5b5;
+    text-align: left;
     margin-bottom: 5%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 80%;  /* or any width you prefer */
+    max-width: 70%;  /* or any width you prefer */
+}
+@media screen and (max-width: 768px) {
+	
+
+.base-template__text {
+	font-size: clamp(.1rem, 3vw, 100rem);
+
+}
 }

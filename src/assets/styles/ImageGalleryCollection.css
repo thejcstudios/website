@@ -220,110 +220,56 @@
         }
 
         /* Responsive Adjustments for 5-column layout */
-        @media (min-width: 1400px) { /* On very large screens, maintain 5 columns */
-            .image-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
+        @media (max-width: 1024px) {
+          .image-grid {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets and small desktops */
+            max-width: 900px;
+          }
+        
+          .drive-gallery-title,
+          .image-gallery-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 10%;
+          }
+        
+          .category-filter-container {
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        
+          .category-button {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+          }
+        
+          .image-item img {
+            height: 160px;
+          }
+        
+          .header-buttons {
+            margin-bottom: 1.5rem;
+            flex-direction: column;
+            align-items: center;
+          }
+        
+          .return-home-button {
+            width: 80%;
+          }
+        
+          .lightbox-close-button {
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            font-size: 1.2rem;
+          }
+        
+          .drive-gallery-container,
+          .image-gallery-container {
+            padding: 2rem 1rem;
+          }
         }
-
-        @media (max-width: 1399px) and (min-width: 1000px) { /* 4 columns on large screens */
-            .image-grid {
-                grid-template-columns: repeat(4, 1fr);
-                max-width: 1100px;
-            }
-        }
-
-        @media (max-width: 999px) and (min-width: 768px) { /* 3 columns on medium screens */
-            .image-grid {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 900px;
-            }
-            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
-                font-size: 3rem;
-                margin-bottom: 2rem;
-            }
-            .category-filter-container {
-                gap: 0.6rem;
-                margin-bottom: 2rem;
-            }
-            .category-button {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-            .image-item img {
-                height: 180px;
-            }
-            .header-buttons {
-                margin-bottom: 1.5rem;
-                flex-direction: row;
-                justify-content: center;
-            }
-            .return-home-button {
-                width: auto;
-            }
-            .lightbox-close-button {
-                top: 10px;
-                right: 10px;
-                width: 30px;
-                height: 30px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 767px) and (min-width: 480px) { /* 2 columns on small tablets */
-            .image-grid {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 500px;
-            }
-            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .category-filter-container {
-                gap: 0.5rem;
-                margin-bottom: 1.5rem;
-            }
-            .category-button {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            .image-item img {
-                height: 160px;
-            }
-            .header-buttons {
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 1.5rem;
-            }
-            .return-home-button {
-                width: 80%;
-            }
-        }
-
-        @media (max-width: 479px) { /* 1 column on mobile */
-            .image-grid {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-            }
-            .drive-gallery-title, .image-gallery-title { /* Added drive-gallery-title */
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-            .drive-gallery-container, .image-gallery-container { /* Renamed for this component */
-                padding: 2rem 1rem;
-            }
-            .category-filter-container {
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: 1rem;
-            }
-            .category-button {
-                width: 80%;
-            }
-            .image-item img {
-                height: 120px;
-            }
-            .return-home-button {
-                width: 80%;
-            }
-        }
+        

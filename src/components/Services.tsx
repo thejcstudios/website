@@ -1,73 +1,93 @@
-import { useInView } from "./hooks/useInView";
+import React, { useEffect, useRef } from 'react';
+import '../assets/styles/Services.css';
 
 function Services() {
-  const { ref: headerRef, isVisible: isHeaderVisible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box1Ref, isVisible: isBox1Visible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box2Ref, isVisible: isBox2Visible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box3Ref, isVisible: isBox3Visible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box4Ref, isVisible: isBox4Visible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box5Ref, isVisible: isBox5Visible } = useInView(0, "0px 0px -20% 0px", true);
-  const { ref: box6Ref, isVisible: isBox6Visible } = useInView(0, "0px 0px -20% 0px", true);
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="servicescontainerbox">
-      <section className="services section-bg" id="services">
-        <div className="servicescontainer">
-          <header className="section-header">
-            <div className={`services7 ${isHeaderVisible ? "visible" : ""}`} ref={headerRef}>
-              <h3>Our Services</h3>
-            </div>
-            <div className={`services8 ${isHeaderVisible ? "visible" : ""}`} ref={headerRef}>
-              <p>We provide professional video and photo coverage services, specializing in capturing your events with creativity and precision. Whether it’s a corporate gathering, wedding, or private party, our dedicated team ensures your moments are preserved beautifully.</p>
-            </div>
-          </header>
-
-          <div className="row">
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox1Visible ? "visible" : ""}`} ref={box1Ref}>
-                <h4 className="title"><a>Event Coverage</a></h4>
-                <p className="description">Document business events, private parties, and corporate gatherings with a professional touch, capturing the atmosphere and key moments in high-quality photos and videos.</p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox2Visible ? "visible" : ""}`} ref={box2Ref}>
-                <h4 className="title"><a>Video Editing</a></h4>
-                <p className="description">Edit and enhance video content with expert storytelling techniques, ensuring a polished, engaging final product that highlights the essence of your event or project.</p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox3Visible ? "visible" : ""}`} ref={box3Ref}>
-                <h4 className="title"><a>Photo Editing</a></h4>
-                <p className="description">Refine images with expert retouching and color correction, enhancing your photos to create stunning visuals that perfectly represent your brand or event.</p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox4Visible ? "visible" : ""}`} ref={box4Ref}>
-                <h4 className="title"><a>E Website Invitation</a></h4>
-                <p className="description">Your Dream Day Starts with a Stunning Invite — Create personalized digital invitations to share your special event online with elegance and style, crafted to impress your guests.</p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox5Visible ? "visible" : ""}`} ref={box5Ref}>
-                <h4 className="title"><a>Same Day Edit</a></h4>
-                <p className="description">Showcase the success of your event on the same day with quick, professional edits that capture the highlights and emotions while the celebration is still fresh.</p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className={`box ${isBox6Visible ? "visible" : ""}`} ref={box6Ref}>
-                <h4 className="title"><a>Corporate Events</a></h4>
-                <p className="description">We capture the key moments of corporate meetings, seminars, and product launches, helping you document your brand’s milestones with professionalism and style.</p>
-              </div>
-            </div>
+    <>
+      <div className="services-container">
+        {/* Section 1: Left Text, Right Image */}
+        <section
+          ref={(el) => {
+            sectionsRef.current[0] = el;
+          }}
+          className="services-section flex-row-desktop fade-target"
+        >
+          <div className="services-text-block">
+            <h1 className="services-heading-blue">Creative Photography & Videography</h1>
+            <p className="services-paragraph">
+            We know that weddings are one of life’s most treasured moments, a day filled with love, laughter, and unforgettable memories. It’s not just the union of two hearts, but the coming together of families, friends, and dreams. At JC Studios, we understand how meaningful this celebration is, and we're here to capture every detail with elegance and care. From stunning photo and video coverage to Same Day Edits that relive the magic instantly. We also offer personalized E-Wedding Invitations and expert editing services to ensure every moment is beautifully preserved and shared. Let us help you relive the joy for years to come.
+            </p>
           </div>
-        </div>
-      </section>
-    </div>
+          <div className="services-image-wrapper">
+            <img
+              src="https://i.imgur.com/7XUgvLC.jpeg"
+              alt="Creative Photography"
+              className="services-image"
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src =
+                  'https://placehold.co/600x400/E5E7EB/4B5563?text=Image+Load+Error';
+              }}
+            />
+          </div>
+        </section>
+
+        {/* Section 2: Left Image, Right Text */}
+        <section
+          ref={(el) => {
+            sectionsRef.current[1] = el;
+          }}
+          className="services-section flex-row-reverse-desktop fade-target"
+        >
+          <div className="services-text-block">
+            <h1 className="services-heading-purple">Professional Event Coverage</h1>
+            <p className="services-paragraph">
+              Corporate events are more than just meetings, they’re opportunities to showcase your brand,
+              celebrate achievements, and build stronger connections. Whether it’s a product launch,
+              company milestone, or annual gathering, we understand the importance of every detail. At JC
+              Studios, we bring a refined, results-driven approach to documenting your event, ensuring your
+              brand’s professionalism and energy are captured with clarity and style.
+            </p>
+          </div>
+          <div className="services-image-wrapper">
+            <img
+              src="https://i.imgur.com/qXHiuj8.jpeg"
+              alt="Professional Event Coverage"
+              className="services-image"
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src =
+                  'https://placehold.co/600x400/E5E7EB/4B5563?text=Image+Load+Error';
+              }}
+            />
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
 
