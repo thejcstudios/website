@@ -62,9 +62,12 @@ function HeroSection() {
           </h1>
 
           {/* Call-to-action button */}
-          <button className="call-to-action-button">
-            Discover More
-          </button>
+          <button
+  className="call-to-action-button"
+  onClick={() => (window.location.href = '/videos')}
+>
+  Discover More
+</button>
         </div>
 
         {/* Navigation dots */}
