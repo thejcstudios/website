@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar1 from './components/Navbar';
-import Hero from './components/Hero';
+import HeroSection from './components/Herov2';
 import PhotoGallery from './components/PhotoGallery';
 import Parralax from './components/Parralax';
 import AboutUs from './components/AboutUs';
@@ -16,18 +16,20 @@ import VideoGalleryCollection from './pages/VideoGalleryCollection';
 import ImageGallery from './pages/ImageGalleryCollection';
 import Invitation from './pages/Invitation';
 import TeamSection from './components/AboutUsInfo';
+import RollingFilm from './components/RollingFilm';
 
 // Landing page layout as a separate component
 const LandingPage = () => {
   return (
     <>
     <div><Navbar1 /></div>
-      <div><Hero /></div>
-      <div><Parralax /></div>
+      <div><HeroSection /></div>
+      <div><RollingFilm /></div>
       <div><PhotoGallery /></div>
       <div><AboutUs /></div>
       <div><Services /></div>
       <div><GallerySlider /></div>
+      <div><Parralax /></div>
       <div><TeamSection /></div>
       <div><VideoList /></div>
       <div><Feedback /></div>

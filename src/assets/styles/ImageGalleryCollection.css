@@ -272,4 +272,14 @@
             padding: 2rem 1rem;
           }
         }
+        .image-grid img {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .image-grid img.loaded {
+          opacity: 1;
+          transform: translateY(0);
+        }
         

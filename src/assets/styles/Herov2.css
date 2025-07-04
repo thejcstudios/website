@@ -1,0 +1,242 @@
+
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.app-container {
+  min-height: 70vh;
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.hero-section {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-carousel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* inset-0 */
+  z-index: 0;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* inset-0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.background-image.active {
+  opacity: 1; /* opacity-100 */
+}
+
+.background-image.inactive {
+  opacity: 0; /* opacity-0 */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* inset-0 */
+  background-color: #000; /* bg-black */
+  opacity: 0.6; /* opacity-60 */
+  z-index: 10;
+}
+
+.content-container {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column; /* flex-col */
+  align-items: center;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  color: #fff; /* text-white */
+  text-align: center;
+  padding-top: 6rem; /* pt-24 */
+}
+
+/* Responsive padding for content-container */
+@media (min-width: 640px) { /* sm */
+  .content-container {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem; /* sm:px-6 */
+  }
+}
+
+@media (min-width: 768px) { /* md */
+  .content-container {
+    padding-top: 8rem; /* md:pt-32 */
+  }
+}
+
+@media (min-width: 1024px) { /* lg */
+  .content-container {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem; /* lg:px-8 */
+    padding-top: 12rem; /* lg:pt-48 */
+  }
+}
+
+/* Keyframes for heading entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-heading {
+    background: linear-gradient(to right, #ffffff, #e5c40f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers that don't support text-fill-color */
+}
+
+/* Responsive font sizes for main-heading */
+@media (min-width: 640px) { /* sm */
+  .main-heading {
+    font-size: 3rem; /* sm:text-5xl */
+    line-height: 1;
+  }
+  
+}
+
+
+
+
+.call-to-action-button {
+    position: relative;
+    padding: clamp(0.1rem, 1vw, 100rem) clamp(.1rem, 2vw, 100rem); /* fluid py-3 to py-5, px-6 to px-10 */
+    background: linear-gradient(135deg, #fff4b8, #FFC107); /* gold gradient */
+    color: #000000;
+    font-weight: 600;
+    font-size: clamp(.1rem, 2.5vw, 100rem); /* fluid 1rem to 1.25rem (16px–20px) */
+    line-height: 1.75rem;
+    border-radius: clamp(2rem, 1vw, 9999px); /* flexible rounded-full */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 300ms ease-in-out;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  /* Light sweep effect */
+  .call-to-action-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: skewX(-20deg);
+  }
+  
+  /* Animation on hover */
+  .call-to-action-button:hover::before {
+    animation: sweep 0.8s ease-in-out;
+  }
+  
+  @keyframes sweep {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+  
+  
+  @keyframes sweep {
+    0% {
+      left: -75%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+  
+
+  @media (min-width: 768px) { /* md */
+    .main-heading {
+        font-size: clamp(.1rem, 2vw, 100rem); /* lg:text-7xl */
+        line-height: 1;
+        width: clamp(.1rem, 40vw, 100rem);
+      }
+      .call-to-action-button {
+        font-size: clamp(.1rem, 1vw, 100rem); /* fluid 1rem to 1.25rem (16px–20px) */
+      }
+}
+
+.navigation-dots {
+  position: absolute;
+  bottom: 2rem; /* bottom-8 */
+  z-index: 30;
+  display: flex;
+  gap: 0.5rem; /* space-x-2 */
+}
+
+/* Keyframes for dot pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.dot-button {
+  width: 0.75rem; /* w-3 */
+  height: 0.75rem; /* h-3 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: #fff; /* bg-white */
+  opacity: 0.5; /* opacity-50 */
+  transition: all 300ms ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.dot-button.active {
+  opacity: 1; /* opacity-100 */
+  transform: scale(1.25); /* scale-125 */
+  animation: pulse 1.5s infinite ease-in-out; /* Apply pulse animation */
+}
+
+.dot-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.75); /* focus:ring-2 focus:ring-white focus:ring-opacity-75 */
+}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/styles/ImageGalleryCollection.css';
 
-// Define the type for images fetched from Google Drive with added category and title for display
+// Define the type for images fetched from Google Drive with added category and title
 type DriveGalleryImage = {
   id: string;
-  imageUrl: string; // Direct link to the image
-  title: string;    // Derived from file name or default
+  imageUrl: string;
+  title: string;
   category: 'Wedding' | 'Prenup' | 'Events' | 'Corporate' | 'Ads' | 'Other';
 };
 
@@ -19,7 +19,7 @@ const DriveImageGallery: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  // Fetch all images with pagination
+  // Fetch all images from Google Drive with pagination
   const fetchImages = async () => {
     setLoading(true);
     setError(null);
@@ -35,7 +35,6 @@ const DriveImageGallery: React.FC = () => {
         }
 
         const data = await response.json();
-
         if (!data.files) {
           throw new Error("No files found or invalid response from Google Drive API.");
         }
@@ -70,7 +69,7 @@ const DriveImageGallery: React.FC = () => {
 
       setImages(fetchedImages);
     } catch (err: any) {
-      setError(`Failed to fetch images: ${err.message}. Please ensure the Google Drive folder and its contents are publicly accessible ('Anyone with the link can view') and your API key is correct.`);
+      setError(`Failed to fetch images: ${err.message}. Please ensure the Google Drive folder and its contents are publicly accessible and your API key is correct.`);
       console.error("Google Drive API fetch error:", err);
     } finally {
       setLoading(false);
@@ -81,24 +80,22 @@ const DriveImageGallery: React.FC = () => {
     fetchImages();
   }, []);
 
-  // Define available categories for buttons
+  // Define categories
   const categories = ['All', 'Wedding', 'Prenup', 'Events', 'Corporate', 'Ads'];
 
-  // Filter images based on the active category
+  // Filter images by category
   const filteredImages = images.filter(image =>
     activeCategory === 'All' || image.category === activeCategory
   );
 
-  // Function to open the lightbox
   const openLightbox = (imageUrl: string) => {
     setLightboxImage(imageUrl);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+    document.body.style.overflow = 'hidden';
   };
 
-  // Function to close the lightbox
   const closeLightbox = () => {
     setLightboxImage(null);
-    document.body.style.overflow = 'auto'; // Restore scrolling
+    document.body.style.overflow = 'auto';
   };
 
   return (
@@ -106,7 +103,7 @@ const DriveImageGallery: React.FC = () => {
       <div className="drive-gallery-container">
         <h1 className="drive-gallery-title">Our Image Gallery</h1>
 
-        {/* Category Filter Buttons */}
+        {/* Category Buttons */}
         <div className="category-filter-container">
           {categories.map(category => (
             <button
@@ -119,6 +116,7 @@ const DriveImageGallery: React.FC = () => {
           ))}
         </div>
 
+        {/* Image Grid */}
         {loading ? (
           <p className="status-message">Loading images...</p>
         ) : error ? (
@@ -138,6 +136,7 @@ const DriveImageGallery: React.FC = () => {
                   alt={image.title}
                   loading="lazy"
                   referrerPolicy="no-referrer"
+                  onLoad={(e) => (e.currentTarget.classList.add('loaded'))}
                 />
               </div>
             ))}
@@ -145,7 +144,7 @@ const DriveImageGallery: React.FC = () => {
         )}
       </div>
 
-      {/* Lightbox/Modal Component */}
+      {/* Lightbox */}
       {lightboxImage && (
         <div className={`lightbox-overlay visible`} onClick={closeLightbox}>
           <div className="lightbox-content" onClick={e => e.stopPropagation()}>

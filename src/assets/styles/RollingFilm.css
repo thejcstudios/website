@@ -1,0 +1,135 @@
+
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.app-container {
+  min-height: 100vh;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column; /* Arrange sections vertically */
+  justify-content: center; /* Center rolling film vertically */
+  align-items: center; /* Center rolling film horizontally */
+  padding: 2rem; /* Add some padding around the whole app */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Rolling Film Component CSS */
+.rolling-film-section {
+  width: 100%;
+  padding: 2rem 0; /* Reverted padding */
+  background-color: #1a1a1a; /* Dark background for contrast */
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 5px 10px rgba(0,0,0,0.3), inset 0 -5px 10px rgba(0,0,0,0.3); /* Reverted shadow */
+}
+
+.rolling-film-title {
+  color: #b5b5b5; /* Reverted text color */
+  text-align: center;
+  font-size: clamp(.1rem, 2.5vw, 100rem);
+  font-weight: 700; /* Reverted font weight */
+  margin-bottom: 1.5rem; /* Reverted margin */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Reverted text shadow */
+  letter-spacing: normal; /* Reverted letter spacing */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.rolling-film-container {
+  display: flex;
+  width: max-content; /* Allows content to exceed viewport */
+  animation: scrollLeft 30s linear infinite; /* Fixed animation speed and direction */
+}
+
+/* Re-added hover pause for the animation as controls are removed */
+.rolling-film-section:hover .rolling-film-container {
+  animation-play-state: paused;
+}
+
+.rolling-film-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: clamp(.1rem, 40vw, 100rem); /* Reverted image width */
+  height: clamp(.1rem, 37vh, 100rem); /* Reverted image height */
+  margin: 0 1rem; /* Reverted spacing */
+  border-radius: 0.5rem; /* Reverted rounded corners */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Reverted shadow */
+  transition: transform 0.3s ease-in-out; /* Reverted transition */
+  position: relative; /* Keep for image overlay, if re-added */
+  background-color: transparent; /* Reverted background for perforations */
+  padding: 0; /* Reverted padding for perforations */
+  box-sizing: content-box; /* Reverted box-sizing */
+}
+
+.rolling-film-item .image-overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%); /* Subtle gradient overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.rolling-film-item:hover .image-overlay {
+  opacity: 1; /* Show gradient on hover */
+}
+
+.rolling-film-item:hover {
+  transform: translateY(-5px) scale(1.03); /* Reverted lift and scale on hover */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Reverted shadow on hover */
+}
+
+.rolling-film-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem; /* Match inner border radius */
+  display: block; /* Remove extra space below image */
+  opacity: 0; /* Start hidden for fade-in */
+  transition: opacity 1s ease-in-out, filter 0.3s ease-in-out; /* Fade-in and filter transition */
+  filter: grayscale(100%); /* Apply grayscale when not hovered */
+}
+
+.rolling-film-item img.loaded {
+  opacity: 1; /* Fade in when loaded */
+}
+
+/* Corrected hover state: apply color when the parent item is hovered */
+.rolling-film-item:hover img {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+/* Keyframes for continuous leftward scroll */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Scroll half the content width to loop seamlessly */
+  }
+}
+
+/* Adjust animation speed and sizes for different screen sizes */
+@media (max-width: 768px) {
+  .rolling-film-container {
+    animation-duration: 20s; /* Faster scroll on smaller screens */
+  }
+  .rolling-film-item {
+    width: clamp(.1rem, 40vw, 100rem); /* Adjusted for mobile */
+    height: clamp(.1rem, 23vw, 100rem); /* Adjusted for mobile */
+    margin: 0 0.8rem;
+  }
+  .rolling-film-title {
+    font-size: 1.5rem;
+  }
+  .rolling-film-section:hover {
+    transform: none; /* Disable 3D tilt on smaller screens if it looks awkward */
+  }
+}
