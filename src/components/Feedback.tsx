@@ -14,11 +14,7 @@ const Feedback: React.FC = () => {
   const { ref: textRef, isVisible: isTextVisible } = useInView(0.1, "0px", true);
 
   const posts: FacebookPost[] = [
-    {
-      id: 3,
-      type: "post",
-      href: "https://www.facebook.com/thejcstudios/posts/pfbid0h8kJkm3vQgNs79RSybmtk4ZFQj3drmgnAtPbcfiz22xMfphtGMwdoYXPRSHBo2qZl"
-    },
+
     {
       id: 6,
       type: "post",
