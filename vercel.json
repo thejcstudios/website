@@ -39,7 +39,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-src 'self' blob: https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://vimeo.com https://drive.google.com https://docs.google.com https://apis.google.com https://accounts.google.com https://www.facebook.com https://web.facebook.com; img-src * data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com https://f.vimeocdn.com; style-src 'self' 'unsafe-inline' https://f.vimeocdn.com; font-src 'self' https://f.vimeocdn.com;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://code.jquery.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://www.googleapis.com https://www.google-analytics.com; frame-src https://www.facebook.com https://web.facebook.com https://player.vimeo.com https://drive.google.com https://docs.google.com https://accounts.google.com https://apis.google.com;"
         }
       ]
     }
