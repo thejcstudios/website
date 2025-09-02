@@ -53,10 +53,10 @@ const Footer: React.FC = () => {
           <div className="footer-column">
             <h3>Website Developer</h3>
             <ul className="footer-links">
-              <li><a href="https://ronnelsantos.onrender.com" target="_blank" rel="noopener noreferrer">Webworks</a></li>
+              <li><a href="https://ronnelsantos.vercel.app" target="_blank" rel="noopener noreferrer">Webworks</a></li>
               <li><a href="mailto:ronnel.santos8@gmail.com">Email</a></li>
               <li><a href="https://www.facebook.com/ronnel.santos08" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-              <li><a href="https://ronnelsantos.onrender.com" target="_blank" rel="noopener noreferrer">Website</a></li>
+              <li><a href="https://ronnelsantos.vercel.app" target="_blank" rel="noopener noreferrer">Website</a></li>
               <li><a href="https://m.me/ronnel.santos08" target="_blank" rel="noopener noreferrer">Messenger</a></li>
             </ul>
           </div>
