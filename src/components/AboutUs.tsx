@@ -24,7 +24,7 @@ function AboutUs() {
   const videos: VimeoVideo[] = [
     {
       id: 1,
-      vimeoId: "1090708957" // Replace this with your actual Vimeo video ID
+      vimeoId: "1134309338" // Replace this with your actual Vimeo video ID
     }
   ];
 
