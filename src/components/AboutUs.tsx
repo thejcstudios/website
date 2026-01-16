@@ -80,7 +80,7 @@ function AboutUs() {
             >
               {/* Second main image */}
               <img
-                src="https://i.imgur.com/B0mrM00.jpeg"
+                src="https://i.imgur.com/0ihVA2M.jpeg"
                 alt="Description of secondary content 2"
                 className="my-app-image-main"
               />
