@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               <div className="contact-item">
                 <i className="fas fa-phone-alt"></i>
                 <span>
-                  <a href="tel:+639950371821">+63 995 037 1821</a><br />
+                  <a href="tel:"></a><br />
                   Mobile Number
                 </span>
               </div>
